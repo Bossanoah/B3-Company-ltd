@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B3 Barnakap City - Premium Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937',
+                        'gold': '#ffd700'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-b3-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-gold">B3 Barnakap City</h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center space-x-4">
+                        <a href="#home" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="#menu" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Menu</a>
+                        <a href="#about" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <a href="#contact" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <a href="../index.html" class="bg-b3-red hover:bg-b3-dark-red text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Back to B3 Company</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-gold focus:outline-none focus:text-gold" id="mobileMenuBtn">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-b3-black via-b3-gray to-b3-black pt-16">
+        <div class="text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-gold">B3</span>
+                <span class="text-white">Barnakap</span>
+                <span class="text-b3-red">City</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Premium Dining Experience
+            </p>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+                Indulge in culinary excellence with our carefully crafted menu, featuring the finest ingredients and exceptional service.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#menu" class="bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto text-center">
+                    View Menu
+                </a>
+                <a href="#contact" class="border-2 border-gold text-gold hover:bg-gold hover:text-black font-bold py-3 px-8 rounded-lg transition duration-300 w-full sm:w-auto text-center">
+                    Make Reservation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-b3-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">About Barnakap City</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Where culinary artistry meets exceptional hospitality
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-gold text-4xl mb-4">👨‍🍳</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Master Chefs</h3>
+                    <p class="text-gray-300">
+                        Our team of internationally trained chefs brings decades of experience and passion to every dish.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-gold text-4xl mb-4">🌟</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Premium Ingredients</h3>
+                    <p class="text-gray-300">
+                        We source only the finest, freshest ingredients from trusted suppliers worldwide.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-gold text-4xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Elegant Atmosphere</h3>
+                    <p class="text-gray-300">
+                        Our sophisticated interior design creates the perfect ambiance for any occasion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-b3-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Menu</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Discover our signature dishes and seasonal specialties
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Appetizers -->
+                <div class="bg-b3-gray p-8 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold text-gold mb-6 text-center">Appetizers</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start border-b border-gray-600 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Truffle Arancini</h4>
+                                <p class="text-gray-300 text-sm">Crispy risotto balls with black truffle</p>
+                            </div>
+                            <span class="text-gold font-bold">$18</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-600 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Seared Scallops</h4>
+                                <p class="text-gray-300 text-sm">Pan-seared with cauliflower purée</p>
+                            </div>
+                            <span class="text-gold font-bold">$24</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Tuna Tartare</h4>
+                                <p class="text-gray-300 text-sm">Fresh yellowfin with avocado</p>
+                            </div>
+                            <span class="text-gold font-bold">$22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="bg-b3-gray p-8 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold text-gold mb-6 text-center">Main Courses</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start border-b border-gray-600 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Wagyu Beef Tenderloin</h4>
+                                <p class="text-gray-300 text-sm">Premium wagyu with red wine jus</p>
+                            </div>
+                            <span class="text-gold font-bold">$65</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-600 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Lobster Thermidor</h4>
+                                <p class="text-gray-300 text-sm">Fresh lobster in cognac sauce</p>
+                            </div>
+                            <span class="text-gold font-bold">$48</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Duck Confit</h4>
+                                <p class="text-gray-300 text-sm">Slow-cooked with cherry gastrique</p>
+                            </div>
+                            <span class="text-gold font-bold">$38</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-b3-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Reservations</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Book your table for an unforgettable dining experience
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Restaurant Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="text-gold text-2xl mr-4">📍</div>
+                            <div>
+                                <p class="text-white font-semibold">Address</p>
+                                <p class="text-gray-300">456 Culinary Boulevard, Gourmet District</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-gold text-2xl mr-4">📞</div>
+                            <div>
+                                <p class="text-white font-semibold">Reservations</p>
+                                <p class="text-gray-300">+1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-gold text-2xl mr-4">🕐</div>
+                            <div>
+                                <p class="text-white font-semibold">Hours</p>
+                                <p class="text-gray-300">Tue-Sun: 5:00 PM - 11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Make a Reservation</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Name" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="date" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <input type="time" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <select class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                                <option>2 Guests</option>
+                                <option>4 Guests</option>
+                                <option>6 Guests</option>
+                                <option>8+ Guests</option>
+                            </select>
+                        </div>
+                        <textarea rows="3" placeholder="Special Requests" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300"></textarea>
+                        <button type="submit" class="w-full bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Make Reservation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-b3-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-gold mb-4">B3 Barnakap City</h3>
+                <p class="text-gray-300 mb-4">Premium dining experience with exceptional cuisine and service.</p>
+                <p class="text-gray-400">&copy; 2024 B3 Barnakap City. Part of B3 Company LTD.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

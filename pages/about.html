@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - B3 Company LTD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-b3-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-2xl font-bold text-b3-red">B3 Company LTD</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center space-x-4">
+                        <a href="../index.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="about.html" class="text-b3-red px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                        <div class="relative group">
+                            <button class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center" id="servicesDropdown">
+                                Services
+                                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-64 bg-b3-gray rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" id="servicesMenu">
+                                <div class="py-1">
+                                    <a href="barnakap-city.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Barnakap City (Restaurant)</a>
+                                    <a href="rock-tivi.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Rock Tivi (Television)</a>
+                                    <a href="music-industry.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Music Industry</a>
+                                    <a href="coming-soon.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">Future Service</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-b3-red focus:outline-none focus:text-b3-red" id="mobileMenuBtn">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-b3-gray">
+                <a href="../index.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="text-b3-red block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <div class="text-white px-3 py-2 rounded-md text-base font-medium">Services:</div>
+                <a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Barnakap City</a>
+                <a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Rock Tivi</a>
+                <a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Music Industry</a>
+                <a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">Future Service</a>
+                <a href="contact.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-b3-black via-b3-gray to-b3-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="text-white">About</span>
+                <span class="text-b3-red">B3 Company LTD</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Pioneering innovation across diverse industries with excellence and integrity
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20 bg-b3-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">Our Story</h2>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Founded with a vision to revolutionize multiple industries, B3 Company LTD has grown from a small startup to a diversified conglomerate. Our journey began with a simple belief: innovation thrives when diverse talents and industries converge.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        Since our inception, we have consistently pushed boundaries, embraced new technologies, and fostered creativity across all our ventures. From premium dining experiences to cutting-edge entertainment, we bring excellence to every sector we touch.
+                    </p>
+                    <p class="text-gray-300">
+                        Today, B3 Company LTD stands as a testament to the power of diversification, innovation, and unwavering commitment to quality.
+                    </p>
+                </div>
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🏢</div>
+                        <h3 class="text-2xl font-bold text-b3-red mb-4">Established 2015</h3>
+                        <p class="text-gray-300 mb-6">Nearly a decade of innovation and growth</p>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-3xl font-bold text-b3-red">4+</div>
+                                <div class="text-gray-300">Industries</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-b3-red">500+</div>
+                                <div class="text-gray-300">Employees</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-b3-red">50M+</div>
+                                <div class="text-gray-300">Revenue</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-b3-red">25+</div>
+                                <div class="text-gray-300">Countries</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="py-20 bg-b3-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Foundation</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-b3-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4">Mission</h3>
+                    <p class="text-gray-300">
+                        To create exceptional value across diverse industries by leveraging innovation, fostering talent, and delivering unparalleled experiences that exceed expectations and drive sustainable growth.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">🔮</div>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4">Vision</h3>
+                    <p class="text-gray-300">
+                        To be the world's most innovative and respected diversified company, setting industry standards and inspiring positive change through our commitment to excellence and social responsibility.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">⭐</div>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4">Values</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Innovation & Creativity</li>
+                        <li>• Integrity & Transparency</li>
+                        <li>• Excellence & Quality</li>
+                        <li>• Diversity & Inclusion</li>
+                        <li>• Sustainability & Responsibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-20 bg-b3-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Leadership Team</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Visionary leaders driving innovation across all our ventures
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">CEO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Sarah Johnson</h3>
+                    <p class="text-b3-red mb-3">Chief Executive Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        Visionary leader with 20+ years of experience in building and scaling diverse business portfolios across multiple industries.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">CTO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Michael Chen</h3>
+                    <p class="text-b3-red mb-3">Chief Technology Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        Technology innovator driving digital transformation and technological advancement across all B3 Company ventures.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">COO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Elena Rodriguez</h3>
+                    <p class="text-b3-red mb-3">Chief Operating Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        Operations expert ensuring seamless execution and operational excellence across our diverse business portfolio.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">CFO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">David Thompson</h3>
+                    <p class="text-b3-red mb-3">Chief Financial Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        Financial strategist with expertise in corporate finance, investment management, and sustainable growth strategies.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">CMO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Amanda Foster</h3>
+                    <p class="text-b3-red mb-3">Chief Marketing Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        Brand strategist and marketing innovator creating compelling narratives and driving customer engagement across all sectors.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-b3-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">CHRO</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">James Wilson</h3>
+                    <p class="text-b3-red mb-3">Chief Human Resources Officer</p>
+                    <p class="text-gray-300 text-sm">
+                        People-focused leader championing diversity, inclusion, and talent development across our global workforce.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Culture -->
+    <section class="py-20 bg-b3-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Culture</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Building an environment where innovation thrives and people excel
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-b3-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Innovation First</h3>
+                    <p class="text-gray-300 text-sm">
+                        We encourage creative thinking and provide resources for breakthrough innovations.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Collaboration</h3>
+                    <p class="text-gray-300 text-sm">
+                        Cross-functional teamwork drives our success across all business units.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Continuous Learning</h3>
+                    <p class="text-gray-300 text-sm">
+                        We invest in our people's growth through training and development programs.
+                    </p>
+                </div>
+                
+                <div class="bg-b3-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Global Impact</h3>
+                    <p class="text-gray-300 text-sm">
+                        Our work creates positive change in communities around the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-20 bg-b3-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Awards & Recognition</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Industry recognition for our commitment to excellence
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Innovation Excellence Award</h3>
+                    <p class="text-gray-300 text-sm mb-2">Global Business Innovation Council</p>
+                    <p class="text-gray-400 text-xs">2023</p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Best Diversified Company</h3>
+                    <p class="text-gray-300 text-sm mb-2">International Business Magazine</p>
+                    <p class="text-gray-400 text-xs">2023</p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Sustainability Leadership</h3>
+                    <p class="text-gray-300 text-sm mb-2">Green Business Alliance</p>
+                    <p class="text-gray-400 text-xs">2022</p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Best Workplace Culture</h3>
+                    <p class="text-gray-300 text-sm mb-2">Corporate Culture Institute</p>
+                    <p class="text-gray-400 text-xs">2022</p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">💡</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Technology Pioneer</h3>
+                    <p class="text-gray-300 text-sm mb-2">Tech Innovation Summit</p>
+                    <p class="text-gray-400 text-xs">2021</p>
+                </div>
+                
+                <div class="bg-b3-black p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-b3-red mb-2">Global Expansion Excellence</h3>
+                    <p class="text-gray-300 text-sm mb-2">International Trade Association</p>
+                    <p class="text-gray-400 text-xs">2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-b3-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-b3-red mb-4">B3 Company LTD</h3>
+                    <p class="text-gray-300 mb-4">Innovation through Diversity - Leading the way in multiple industries with excellence and innovation.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-b3-red transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-b3-red transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-b3-red transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-b3-red transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-b3-red transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Barnakap City</a></li>
+                        <li><a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Rock Tivi</a></li>
+                        <li><a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Music Industry</a></li>
+                        <li><a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">Future Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 B3 Company LTD. All rights reserved. Innovation through Diversity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
