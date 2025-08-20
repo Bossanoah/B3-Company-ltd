@@ -34,16 +34,30 @@
                 </div>
                 <div class="hidden md:flex items-center">
                     <div class="flex items-center space-x-4">
-                        <a href="#home" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                        <a href="#menu" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Menu</a>
-                        <a href="#about" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                        <a href="#contact" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
-                        <a href="../index.html" class="bg-b3-red hover:bg-b3-dark-red text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Back to B3 Company</a>
+                        <a href="#home" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="nav-home">Home</a>
+                        <a href="#menu" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="menu-title">Our Menu</a>
+                        <a href="#about" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="nav-about">About Us</a>
+                        <a href="#contact" class="text-white hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="nav-contact">Contact</a>
+                        <a href="../index.html" class="bg-b3-red hover:bg-b3-dark-red text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="back-to-company">Back to B3 Company</a>
+                        <!-- Language Switcher in Navbar -->
+                        <div class="language-switcher is-navbar">
+                            <button class="language-switcher-btn">🌐<span class="lang-code">EN</span></button>
+                            <div class="language-dropdown">
+                                <a href="#" class="language-option active" data-lang="en">
+                                    <span class="flag-icon flag-icon-uk"></span>
+                                    English
+                                </a>
+                                <a href="#" class="language-option" data-lang="fr">
+                                    <span class="flag-icon flag-icon-fr"></span>
+                                    Français
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="text-white hover:text-gold focus:outline-none focus:text-gold" id="mobileMenuBtn">
+                    <button type="button" class="text-white hover:text-gold focus:outline-none focus:text-gold" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -61,31 +75,48 @@
                 <span class="text-white">Barnakap</span>
                 <span class="text-b3-red">City</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                Premium Dining Experience
-            </p>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8" data-translate="barnakap-hero-subtitle">Premium Dining Experience</p>
             <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
                 Indulge in culinary excellence with our carefully crafted menu, featuring the finest ingredients and exceptional service.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#menu" class="bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto text-center">
-                    View Menu
-                </a>
-                <a href="#contact" class="border-2 border-gold text-gold hover:bg-gold hover:text-black font-bold py-3 px-8 rounded-lg transition duration-300 w-full sm:w-auto text-center">
-                    Make Reservation
-                </a>
+                <a href="#menu" class="bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto text-center" data-translate="view-menu">View Menu</a>
+                <a href="#contact" class="border-2 border-gold text-gold hover:bg-gold hover:text-black font-bold py-3 px-8 rounded-lg transition duration-300 w-full sm:w-auto text-center" data-translate="make-reservation">Make Reservation</a>
             </div>
         </div>
     </section>
+    <!-- Mobile menu for Barnakap -->
+    <div class="md:hidden hidden" id="mobileMenu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-b3-gray">
+            <a href="#home" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-home">Home</a>
+            <a href="#menu" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium" data-translate="menu-title">Our Menu</a>
+            <a href="#about" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-about">About Us</a>
+            <a href="#contact" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-contact">Contact</a>
+            <a href="../index.html" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium" data-translate="back-to-company">Back to B3 Company</a>
+            <div class="px-3 py-2">
+                <div class="language-switcher is-navbar">
+                    <button class="language-switcher-btn">🌐<span class="lang-code">EN</span></button>
+                    <div class="language-dropdown">
+                        <a href="#" class="language-option active" data-lang="en">
+                            <span class="flag-icon flag-icon-uk"></span>
+                            English
+                        </a>
+                        <a href="#" class="language-option" data-lang="fr">
+                            <span class="flag-icon flag-icon-fr"></span>
+                            Français
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-b3-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">About Barnakap City</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Where culinary artistry meets exceptional hospitality
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-translate="about-barnakap-title">About Barnakap City</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-translate="about-barnakap-subtitle">Where culinary artistry meets exceptional hospitality</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -120,16 +151,14 @@
     <section id="menu" class="py-20 bg-b3-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Menu</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Discover our signature dishes and seasonal specialties
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-translate="menu-title">Our Menu</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-translate="menu-subtitle">Discover our signature dishes and seasonal specialties</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Appetizers -->
                 <div class="bg-b3-gray p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-gold mb-6 text-center">Appetizers</h3>
+                    <h3 class="text-3xl font-bold text-gold mb-6 text-center" data-translate="appetizers">Appetizers</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-start border-b border-gray-600 pb-3">
                             <div>
@@ -157,7 +186,7 @@
 
                 <!-- Main Courses -->
                 <div class="bg-b3-gray p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-gold mb-6 text-center">Main Courses</h3>
+                    <h3 class="text-3xl font-bold text-gold mb-6 text-center" data-translate="main-courses">Main Courses</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-start border-b border-gray-600 pb-3">
                             <div>
@@ -190,34 +219,32 @@
     <section id="contact" class="py-20 bg-b3-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Reservations</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Book your table for an unforgettable dining experience
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-translate="reservations-title">Reservations</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-translate="reservations-subtitle">Book your table for an unforgettable dining experience</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-6">Restaurant Information</h3>
+                    <h3 class="text-2xl font-bold text-white mb-6" data-translate="restaurant-info-title">Restaurant Information</h3>
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <div class="text-gold text-2xl mr-4">📍</div>
                             <div>
-                                <p class="text-white font-semibold">Address</p>
+                                <p class="text-white font-semibold" data-translate="address-label">Address</p>
                                 <p class="text-gray-300">456 Culinary Boulevard, Gourmet District</p>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <div class="text-gold text-2xl mr-4">📞</div>
                             <div>
-                                <p class="text-white font-semibold">Reservations</p>
+                                <p class="text-white font-semibold" data-translate="reservations-label">Reservations</p>
                                 <p class="text-gray-300">+1 (555) 987-6543</p>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <div class="text-gold text-2xl mr-4">🕐</div>
                             <div>
-                                <p class="text-white font-semibold">Hours</p>
+                                <p class="text-white font-semibold" data-translate="hours-label">Hours</p>
                                 <p class="text-gray-300">Tue-Sun: 5:00 PM - 11:00 PM</p>
                             </div>
                         </div>
@@ -225,26 +252,30 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-6">Make a Reservation</h3>
+                    <h3 class="text-2xl font-bold text-white mb-6" data-translate="reservation-form-title">Make a Reservation</h3>
                     <form class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Name" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
-                            <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <label class="sr-only" for="res-name">Name</label>
+                            <input id="res-name" type="text" placeholder="Name" data-translate-placeholder="ph-name" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <label class="sr-only" for="res-email">Email</label>
+                            <input id="res-email" type="email" placeholder="Email" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <input type="date" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
-                            <input type="time" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
-                            <select class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
-                                <option>2 Guests</option>
-                                <option>4 Guests</option>
-                                <option>6 Guests</option>
-                                <option>8+ Guests</option>
+                            <label class="sr-only" for="res-date">Date</label>
+                            <input id="res-date" type="date" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <label class="sr-only" for="res-time">Time</label>
+                            <input id="res-time" type="time" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300">
+                            <label class="sr-only" for="res-guests">Guests</label>
+                            <select id="res-guests" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300" aria-label="Guests">
+                                <option data-translate="guests-2">2 Guests</option>
+                                <option data-translate="guests-4">4 Guests</option>
+                                <option data-translate="guests-6">6 Guests</option>
+                                <option data-translate="guests-8">8+ Guests</option>
                             </select>
                         </div>
-                        <textarea rows="3" placeholder="Special Requests" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300"></textarea>
-                        <button type="submit" class="w-full bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300">
-                            Make Reservation
-                        </button>
+                        <label class="sr-only" for="res-requests">Special Requests</label>
+                        <textarea id="res-requests" rows="3" placeholder="Special Requests" data-translate-placeholder="ph-special-requests" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gold transition duration-300"></textarea>
+                        <button type="submit" class="w-full bg-gold hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300" data-translate="make-reservation-btn">Make Reservation</button>
                     </form>
                 </div>
             </div>
@@ -256,28 +287,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h3 class="text-2xl font-bold text-gold mb-4">B3 Barnakap City</h3>
-                <p class="text-gray-300 mb-4">Premium dining experience with exceptional cuisine and service.</p>
+                <p class="text-gray-300 mb-4" data-translate="barnakap-desc">Premium dining experience</p>
                 <p class="text-gray-400">&copy; 2024 B3 Barnakap City. Part of B3 Company LTD.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button class="language-switcher-btn">
-            🌐<span style="font-size: 12px; margin-left: 2px;">EN</span>
-        </button>
-        <div class="language-dropdown">
-            <a href="#" class="language-option active" data-lang="en">
-                <span class="flag-icon" style="background: linear-gradient(to bottom, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%)"></span>
-                English
-            </a>
-            <a href="#" class="language-option" data-lang="fr">
-                <span class="flag-icon" style="background: linear-gradient(to right, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%)"></span>
-                Français
-            </a>
-        </div>
-    </div>
+    
 
     <!-- Back to Top Button -->
     <div class="back-to-top">
