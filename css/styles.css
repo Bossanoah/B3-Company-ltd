@@ -210,6 +210,15 @@ html {
     z-index: 1001;
 }
 
+/* Navbar variant of the language switcher */
+.language-switcher.is-navbar {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    display: inline-block;
+    margin-left: 16px;
+}
+
 .language-switcher-btn {
     width: 50px;
     height: 50px;
@@ -255,6 +264,12 @@ html {
     transform: translateY(0);
 }
 
+/* Dropdown positioning when used in navbar */
+.language-switcher.is-navbar .language-dropdown {
+    top: 60px;
+    bottom: auto;
+}
+
 .language-option {
     display: flex;
     align-items: center;
@@ -278,4 +293,19 @@ html {
     height: 15px;
     margin-right: 8px;
     border-radius: 2px;
+}
+
+/* Language code text inside switcher button */
+.lang-code {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+/* Flag backgrounds moved from inline styles */
+.flag-icon-uk {
+    background: linear-gradient(to bottom, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%);
+}
+
+.flag-icon-fr {
+    background: linear-gradient(to right, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%);
 }

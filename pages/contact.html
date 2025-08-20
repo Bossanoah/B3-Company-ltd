@@ -33,30 +33,44 @@
                 </div>
                 <div class="hidden md:flex items-center">
                     <div class="flex items-center space-x-4">
-                        <a href="../index.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                        <a href="about.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">About Us</a>
+                        <a href="../index.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="nav-home">Home</a>
+                        <a href="about.html" class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300" data-translate="nav-about">About Us</a>
                         <div class="relative group">
                             <button class="text-white hover:text-b3-red px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center" id="servicesDropdown">
-                                Services
+                                <span data-translate="nav-services">Services</span>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div class="absolute left-0 mt-2 w-64 bg-b3-gray rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" id="servicesMenu">
                                 <div class="py-1">
-                                    <a href="barnakap-city.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Barnakap City (Restaurant)</a>
-                                    <a href="rock-tivi.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Rock Tivi (Television)</a>
-                                    <a href="music-industry.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">B3 Music Industry</a>
-                                    <a href="coming-soon.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300">Future Service</a>
+                                    <a href="barnakap-city.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-barnakap">B3 Barnakap City (Restaurant)</a>
+                                    <a href="rock-tivi.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-rock">B3 Rock Tivi (Television)</a>
+                                    <a href="music-industry.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-music">B3 Music Industry</a>
+                                    <a href="coming-soon.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-future">Future Service</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="contact.html" class="text-b3-red px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="contact.html" class="text-b3-red px-3 py-2 rounded-md text-sm font-medium" data-translate="nav-contact">Contact</a>
+                        <!-- Language Switcher in Navbar -->
+                        <div class="language-switcher is-navbar">
+                            <button class="language-switcher-btn">🌐<span class="lang-code">EN</span></button>
+                            <div class="language-dropdown">
+                                <a href="#" class="language-option active" data-lang="en">
+                                    <span class="flag-icon flag-icon-uk"></span>
+                                    English
+                                </a>
+                                <a href="#" class="language-option" data-lang="fr">
+                                    <span class="flag-icon flag-icon-fr"></span>
+                                    Français
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="text-white hover:text-b3-red focus:outline-none focus:text-b3-red" id="mobileMenuBtn">
+                    <button type="button" class="text-white hover:text-b3-red focus:outline-none focus:text-b3-red" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -67,14 +81,29 @@
         <!-- Mobile menu -->
         <div class="md:hidden hidden" id="mobileMenu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-b3-gray">
-                <a href="../index.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="about.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium">About Us</a>
-                <div class="text-white px-3 py-2 rounded-md text-base font-medium">Services:</div>
-                <a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Barnakap City</a>
-                <a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Rock Tivi</a>
-                <a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">B3 Music Industry</a>
-                <a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium">Future Service</a>
-                <a href="contact.html" class="text-b3-red block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="../index.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-home">Home</a>
+                <a href="about.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-about">About Us</a>
+                <div class="text-white px-3 py-2 rounded-md text-base font-medium" data-translate="nav-services-label">Services:</div>
+                <a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="barnakap-title">B3 Barnakap City</a>
+                <a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="rock-tivi-title">B3 Rock Tivi</a>
+                <a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="music-title">B3 Music Industry</a>
+                <a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="services-future">Future Service</a>
+                <a href="contact.html" class="text-b3-red block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-contact">Contact</a>
+                <div class="px-3 py-2">
+                    <div class="language-switcher is-navbar">
+                        <button class="language-switcher-btn">🌐<span class="lang-code">EN</span></button>
+                        <div class="language-dropdown">
+                            <a href="#" class="language-option active" data-lang="en">
+                                <span class="flag-icon flag-icon-uk"></span>
+                                English
+                            </a>
+                            <a href="#" class="language-option" data-lang="fr">
+                                <span class="flag-icon flag-icon-fr"></span>
+                                Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -83,10 +112,10 @@
     <section class="pt-24 pb-16 bg-gradient-to-br from-b3-black via-b3-gray to-b3-black parallax-bg" data-speed="0.3">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-on-scroll fade-in-up">
-                <span class="text-white">Contact</span>
+                <span class="text-white" data-translate="nav-contact">Contact</span>
                 <span class="text-b3-red">B3 Company LTD</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-on-scroll fade-in-up animate-delay-200 typing-effect">
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-on-scroll fade-in-up animate-delay-200 typing-effect" data-translate="contact-hero-subtitle">
                 Let's start a conversation about your next big opportunity
             </p>
         </div>
@@ -99,32 +128,32 @@
                 <!-- Headquarters -->
                 <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-left">
                     <div class="text-5xl mb-6">🏢</div>
-                    <h3 class="text-2xl font-bold text-b3-red mb-4">Headquarters</h3>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4" data-translate="contact-hq">Headquarters</h3>
                     <div class="space-y-3 text-gray-300">
-                        <p><strong>Address:</strong><br>123 Innovation Drive<br>Corporate Plaza, Suite 2500<br>Business City, BC 12345</p>
-                        <p><strong>Phone:</strong><br>+1 (555) 123-4567</p>
-                        <p><strong>Email:</strong><br>info@b3company.com</p>
-                        <p><strong>Hours:</strong><br>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                        <p><strong data-translate="label-address">Address</strong>:<br>123 Innovation Drive<br>Corporate Plaza, Suite 2500<br>Business City, BC 12345</p>
+                        <p><strong data-translate="label-phone">Phone</strong>:<br>+1 (555) 123-4567</p>
+                        <p><strong data-translate="label-email">Email</strong>:<br>info@b3company.com</p>
+                        <p><strong data-translate="label-hours">Hours</strong>:<br>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
                     </div>
                 </div>
 
                 <!-- Regional Offices -->
                 <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-up animate-delay-200">
                     <div class="text-5xl mb-6">🌍</div>
-                    <h3 class="text-2xl font-bold text-b3-red mb-4">Regional Offices</h3>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4" data-translate="contact-regional-offices">Regional Offices</h3>
                     <div class="space-y-4 text-gray-300 text-sm">
                         <div>
-                            <p><strong>New York Office</strong></p>
+                            <p><strong data-translate="ny-office">New York Office</strong></p>
                             <p>456 Manhattan Ave, NY 10001</p>
                             <p>+1 (555) 234-5678</p>
                         </div>
                         <div>
-                            <p><strong>London Office</strong></p>
+                            <p><strong data-translate="london-office">London Office</strong></p>
                             <p>789 Thames Street, London EC1A 1BB</p>
                             <p>+44 20 7123 4567</p>
                         </div>
                         <div>
-                            <p><strong>Tokyo Office</strong></p>
+                            <p><strong data-translate="tokyo-office">Tokyo Office</strong></p>
                             <p>321 Shibuya District, Tokyo 150-0002</p>
                             <p>+81 3 1234 5678</p>
                         </div>
@@ -134,12 +163,12 @@
                 <!-- Support -->
                 <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-right">
                     <div class="text-5xl mb-6">📞</div>
-                    <h3 class="text-2xl font-bold text-b3-red mb-4">24/7 Support</h3>
+                    <h3 class="text-2xl font-bold text-b3-red mb-4" data-translate="contact-support-title">24/7 Support</h3>
                     <div class="space-y-3 text-gray-300">
-                        <p><strong>Emergency:</strong><br>+1 (555) 911-HELP</p>
-                        <p><strong>Support:</strong><br>support@b3company.com</p>
-                        <p><strong>Media:</strong><br>media@b3company.com</p>
-                        <p><strong>Careers:</strong><br>careers@b3company.com</p>
+                        <p><strong data-translate="label-emergency">Emergency</strong>:<br>+1 (555) 911-HELP</p>
+                        <p><strong data-translate="label-support">Support</strong>:<br>support@b3company.com</p>
+                        <p><strong data-translate="label-media">Media</strong>:<br>media@b3company.com</p>
+                        <p><strong data-translate="label-careers">Careers</strong>:<br>careers@b3company.com</p>
                     </div>
                 </div>
             </div>
@@ -150,36 +179,36 @@
     <section class="py-20 bg-b3-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll scale-in">Get In Touch</h2>
-                <p class="text-xl text-gray-300 animate-on-scroll fade-in-up animate-delay-200">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll scale-in" data-translate="contact-form-title">Get In Touch</h2>
+                <p class="text-xl text-gray-300 animate-on-scroll fade-in-up animate-delay-200" data-translate="contact-form-subtitle">
                     Ready to explore opportunities with B3 Company LTD?
                 </p>
             </div>
             
             <div class="bg-b3-gray p-8 rounded-lg shadow-lg animate-on-scroll slide-in-bottom animate-delay-300">
-                <form class="space-y-6">
+                <form id="contactForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" placeholder="First Name *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
-                        <input type="text" placeholder="Last Name *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
+                        <input name="firstName" type="text" data-translate-placeholder="ph-first-name" placeholder="First Name *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
+                        <input name="lastName" type="text" data-translate-placeholder="ph-last-name" placeholder="Last Name *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="email" placeholder="Email Address *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
-                        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
+                        <input name="email" type="email" data-translate-placeholder="ph-email" placeholder="Email Address *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
+                        <input name="phone" type="tel" data-translate-placeholder="ph-phone" placeholder="Phone Number" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
                     </div>
-                    <input type="text" placeholder="Company/Organization" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
-                    <select class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
-                        <option value="">Select Inquiry Type</option>
-                        <option value="general">General Information</option>
-                        <option value="partnership">Partnership Opportunities</option>
-                        <option value="investment">Investment Inquiries</option>
-                        <option value="media">Media & Press</option>
-                        <option value="careers">Career Opportunities</option>
-                        <option value="support">Technical Support</option>
+                    <input name="company" type="text" data-translate-placeholder="ph-company" placeholder="Company/Organization" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
+                    <label class="sr-only" for="inquiry">Inquiry Type</label>
+                    <select id="inquiry" name="inquiry" class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300" aria-label="Inquiry Type">
+                        <option value="" data-translate="select-inquiry">Select Inquiry Type</option>
+                        <option value="general" data-translate="opt-general">General Information</option>
+                        <option value="partnership" data-translate="opt-partnership">Partnership Opportunities</option>
+                        <option value="investment" data-translate="opt-investment">Investment Inquiries</option>
+                        <option value="media" data-translate="opt-media">Media & Press</option>
+                        <option value="careers" data-translate="opt-careers">Career Opportunities</option>
+                        <option value="support" data-translate="opt-support">Technical Support</option>
+                        <option value="support" data-translate="opt-support">Others</option>
                     </select>
-                    <textarea rows="6" placeholder="Your Message *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300"></textarea>
-                    <button type="submit" class="w-full bg-b3-red hover:bg-b3-dark-red text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                        Send Message
-                    </button>
+                    <textarea name="message" rows="6" data-translate-placeholder="ph-message" placeholder="Your Message *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300"></textarea>
+                    <button type="submit" class="w-full bg-b3-red hover:bg-b3-dark-red text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105" data-translate="send-message">Send Message</button>
                 </form>
             </div>
         </div>
@@ -195,47 +224,32 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <h4 class="text-lg font-semibold text-white mb-4" data-translate="quick-links">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-b3-red transition duration-300">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-b3-red transition duration-300">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-b3-red transition duration-300">Contact</a></li>
+                        <li><a href="../index.html" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="footer-home">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="footer-about">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="footer-contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold text-white mb-4">Our Services</h4>
+                    <h4 class="text-lg font-semibold text-white mb-4" data-translate="our-services">Our Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Barnakap City</a></li>
-                        <li><a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Rock Tivi</a></li>
-                        <li><a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">B3 Music Industry</a></li>
-                        <li><a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300">Future Service</a></li>
+                        <li><a href="barnakap-city.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="barnakap-title">B3 Barnakap City</a></li>
+                        <li><a href="rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="rock-tivi-title">B3 Rock Tivi</a></li>
+                        <li><a href="music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="music-title">B3 Music Industry</a></li>
+                        <li><a href="coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red transition duration-300" data-translate="services-future">Future Service</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 B3 Company LTD. All rights reserved. Innovation through Diversity.</p>
+                <p class="text-gray-400" data-translate="copyright">&copy; 2024 B3 Company LTD. All rights reserved. Innovation through Diversity.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button class="language-switcher-btn">
-            🌐<span style="font-size: 12px; margin-left: 2px;">EN</span>
-        </button>
-        <div class="language-dropdown">
-            <a href="#" class="language-option active" data-lang="en">
-                <span class="flag-icon" style="background: linear-gradient(to bottom, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%)"></span>
-                English
-            </a>
-            <a href="#" class="language-option" data-lang="fr">
-                <span class="flag-icon" style="background: linear-gradient(to right, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%)"></span>
-                Français
-            </a>
-        </div>
-    </div>
+    
 
     <!-- Back to Top Button -->
     <div class="back-to-top">
