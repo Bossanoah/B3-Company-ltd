@@ -80,13 +80,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-b3-black via-b3-gray to-b3-black">
+    <section class="pt-24 pb-16 bg-gradient-to-br from-b3-black via-b3-gray to-b3-black parallax-bg" data-speed="0.3">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-on-scroll fade-in-up">
                 <span class="text-white">Contact</span>
                 <span class="text-b3-red">B3 Company LTD</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-on-scroll fade-in-up animate-delay-200 typing-effect">
                 Let's start a conversation about your next big opportunity
             </p>
         </div>
@@ -97,7 +97,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Headquarters -->
-                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-left">
                     <div class="text-5xl mb-6">🏢</div>
                     <h3 class="text-2xl font-bold text-b3-red mb-4">Headquarters</h3>
                     <div class="space-y-3 text-gray-300">
@@ -109,7 +109,7 @@
                 </div>
 
                 <!-- Regional Offices -->
-                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-up animate-delay-200">
                     <div class="text-5xl mb-6">🌍</div>
                     <h3 class="text-2xl font-bold text-b3-red mb-4">Regional Offices</h3>
                     <div class="space-y-4 text-gray-300 text-sm">
@@ -132,7 +132,7 @@
                 </div>
 
                 <!-- Support -->
-                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-b3-black p-8 rounded-lg shadow-lg text-center animate-on-scroll fade-in-right">
                     <div class="text-5xl mb-6">📞</div>
                     <h3 class="text-2xl font-bold text-b3-red mb-4">24/7 Support</h3>
                     <div class="space-y-3 text-gray-300">
@@ -150,13 +150,13 @@
     <section class="py-20 bg-b3-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-                <p class="text-xl text-gray-300">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll scale-in">Get In Touch</h2>
+                <p class="text-xl text-gray-300 animate-on-scroll fade-in-up animate-delay-200">
                     Ready to explore opportunities with B3 Company LTD?
                 </p>
             </div>
             
-            <div class="bg-b3-gray p-8 rounded-lg shadow-lg">
+            <div class="bg-b3-gray p-8 rounded-lg shadow-lg animate-on-scroll slide-in-bottom animate-delay-300">
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input type="text" placeholder="First Name *" required class="w-full px-4 py-3 bg-b3-black text-white border border-gray-600 rounded-lg focus:outline-none focus:border-b3-red transition duration-300">
@@ -219,6 +219,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-switcher-btn">
+            🌐<span style="font-size: 12px; margin-left: 2px;">EN</span>
+        </button>
+        <div class="language-dropdown">
+            <a href="#" class="language-option active" data-lang="en">
+                <span class="flag-icon" style="background: linear-gradient(to bottom, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%)"></span>
+                English
+            </a>
+            <a href="#" class="language-option" data-lang="fr">
+                <span class="flag-icon" style="background: linear-gradient(to right, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%)"></span>
+                Français
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </div>
 
     <script src="../js/main.js"></script>
 </body>
