@@ -46,21 +46,21 @@
                     
                     <!-- Language Switcher -->
                     <div class="relative group ml-4">
-                        <button class="flex items-center text-white hover:text-barnakap-gold transition duration-300 border border-barnakap-gold rounded-md px-3 py-1">
+                        <button id="languageSwitcher" class="flex items-center text-white hover:text-gold transition duration-300 border border-gold rounded-md px-3 py-1">
                             <span class="fi fi-gb mr-1"></span>
                             <span class="text-sm">EN</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
-                        <div class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-barnakap-gold">
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-gold z-50">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
                                 <span class="fi fi-gb mr-2"></span>
-                                <span>English</span>
+                                <span data-i18n="btn.english">English</span>
                             </a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
                                 <span class="fi fi-fr mr-2"></span>
-                                <span>Français</span>
+                                <span data-i18n="btn.french">Français</span>
                             </a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobileMenuBtn" class="text-white hover:text-gold">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold" title="open menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -107,15 +107,15 @@
                 <a href="reviews.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reviews">Reviews</a>
                 
                 <!-- Mobile Language Switcher -->
-                <div class="border-t border-barnakap-gold mt-2 pt-2">
-                    <p class="px-3 py-2 text-barnakap-gold font-medium">Select Language</p>
-                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                <div class="border-t border-gold mt-2 pt-2">
+                    <p class="px-3 py-2 text-gold font-medium" data-i18n="btn.selectLanguage">Select Language</p>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
                         <span class="fi fi-gb mr-2"></span>
-                        <span>English</span>
+                        <span data-i18n="btn.english">English</span>
                     </a>
-                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
                         <span class="fi fi-fr mr-2"></span>
-                        <span>Français</span>
+                        <span data-i18n="btn.french">Français</span>
                     </a>
                 </div>
             </div>
@@ -129,11 +129,10 @@
     <section class="pt-20 pb-12 bg-gradient-to-r from-barnakap-red via-black to-barnakap-gold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-6xl md:text-8xl font-bold mb-6 neon-glow">
-                <span class="text-white">NIGHT</span> 
-                <span class="text-barnakap-gold">CLUB</span>
+                <span class="text-white" data-i18n="page.nightclub.title">NIGHT CLUB</span>
             </h1>
-            <p class="text-2xl text-gray-300 mb-8">Where the night comes alive</p>
-            <a href="reservations.html" class="bg-barnakap-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-bold transition duration-300 btn-animate neon-glow">
+            <p class="text-2xl text-gray-300 mb-8" data-i18n="content.whereNightComesAlive">Where the night comes alive</p>
+            <a href="reservations.html" class="bg-barnakap-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-bold transition duration-300 btn-animate neon-glow" data-i18n="btn.bookTable">
                 BOOK VIP TABLE
             </a>
         </div>
@@ -143,38 +142,38 @@
     <section class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">Club Gallery</h2>
-                <p class="text-lg text-gray-300">Experience the electrifying atmosphere</p>
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold" data-i18n="content.clubGallery">Club Gallery</h2>
+                <p class="text-lg text-gray-300" data-i18n="content.experienceElectrifying">Experience the electrifying atmosphere</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-gradient-to-br from-barnakap-red to-red-800 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-white text-lg font-bold">Main Dance Floor</span>
+                        <span class="text-white text-lg font-bold" data-i18n="content.mainDanceFloor">Main Dance Floor</span>
                     </div>
                 </div>
                 <div class="gallery-item bg-gradient-to-br from-barnakap-gold to-yellow-600 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-black text-lg font-bold">VIP Lounge</span>
+                        <span class="text-black text-lg font-bold" data-i18n="content.vipLounge">VIP Lounge</span>
                     </div>
                 </div>
                 <div class="gallery-item bg-gradient-to-br from-purple-600 to-pink-600 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-white text-lg font-bold">DJ Booth</span>
+                        <span class="text-white text-lg font-bold" data-i18n="content.djBooth">DJ Booth</span>
                     </div>
                 </div>
                 <div class="gallery-item bg-gradient-to-br from-blue-600 to-cyan-600 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-white text-lg font-bold">Bar Area</span>
+                        <span class="text-white text-lg font-bold" data-i18n="content.barArea">Bar Area</span>
                     </div>
                 </div>
                 <div class="gallery-item bg-gradient-to-br from-green-600 to-emerald-600 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-white text-lg font-bold">Private Booths</span>
+                        <span class="text-white text-lg font-bold" data-i18n="content.privateBooths">Private Booths</span>
                     </div>
                 </div>
                 <div class="gallery-item bg-gradient-to-br from-orange-600 to-red-600 h-64 rounded-lg">
                     <div class="gallery-overlay">
-                        <span class="text-white text-lg font-bold">Light Show</span>
+                        <span class="text-white text-lg font-bold" data-i18n="content.lightShow">Light Show</span>
                     </div>
                 </div>
             </div>
@@ -185,8 +184,8 @@
     <section class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Weekly Events</h2>
-                <p class="text-lg text-gray-300">Something exciting every night</p>
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red" data-i18n="content.weeklyEvents">Weekly Events</h2>
+                <p class="text-lg text-gray-300" data-i18n="content.somethingExciting">Something exciting every night</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="event-card rounded-lg p-6 text-center border-2 border-barnakap-red">
@@ -225,8 +224,8 @@
     <section class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">VIP Services</h2>
-                <p class="text-lg text-gray-300">Elevate your night with exclusive experiences</p>
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold" data-i18n="content.vipServices">VIP Services</h2>
+                <p class="text-lg text-gray-300" data-i18n="content.elevateYourNight">Elevate your night with exclusive experiences</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-gradient-to-br from-barnakap-red to-red-800 rounded-lg p-8 text-center neon-glow">
@@ -239,7 +238,7 @@
                         <li>• Skip the line entry</li>
                     </ul>
                     <div class="text-3xl font-bold mb-4">From $200</div>
-                    <a href="reservations.html" class="bg-white text-barnakap-red px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300">
+                    <a href="reservations.html" class="bg-white text-barnakap-red px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300" data-i18n="btn.reserveNow">
                         RESERVE NOW
                     </a>
                 </div>
@@ -254,7 +253,7 @@
                         <li>• Complimentary appetizers</li>
                     </ul>
                     <div class="text-3xl font-bold mb-4">From $500</div>
-                    <a href="reservations.html" class="bg-black text-barnakap-gold px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition duration-300">
+                    <a href="reservations.html" class="bg-black text-barnakap-gold px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition duration-300" data-i18n="btn.bookPremium">
                         BOOK PREMIUM
                     </a>
                 </div>
@@ -269,7 +268,7 @@
                         <li>• Meet & greet with DJs</li>
                     </ul>
                     <div class="text-3xl font-bold mb-4">From $1000</div>
-                    <a href="contact.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300">
+                    <a href="contact.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300" data-i18n="btn.contactUs">
                         CONTACT US
                     </a>
                 </div>
@@ -281,8 +280,8 @@
     <section class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Special Events</h2>
-                <p class="text-lg text-gray-300">Don't miss these exclusive nights</p>
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red" data-i18n="content.specialEvents">Special Events</h2>
+                <p class="text-lg text-gray-300" data-i18n="content.dontMissExclusive">Don't miss these exclusive nights</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-black rounded-lg p-8 border-2 border-barnakap-gold">
@@ -334,12 +333,12 @@
     <section class="py-16 bg-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold mb-4 text-white">Club Guidelines</h2>
-                <p class="text-gray-300">Please review our policies for a safe and enjoyable experience</p>
+                <h2 class="text-3xl font-bold mb-4 text-white" data-i18n="content.clubGuidelines">Club Guidelines</h2>
+                <p class="text-gray-300" data-i18n="content.reviewPolicies">Please review our policies for a safe and enjoyable experience</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gray-900 rounded-lg p-6">
-                    <h3 class="text-xl font-bold text-barnakap-gold mb-4">Dress Code</h3>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-4" data-i18n="content.dressCode">Dress Code</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li>• Smart casual to formal attire required</li>
                         <li>• No athletic wear, shorts, or flip-flops</li>
@@ -348,7 +347,7 @@
                     </ul>
                 </div>
                 <div class="bg-gray-900 rounded-lg p-6">
-                    <h3 class="text-xl font-bold text-barnakap-red mb-4">Entry Requirements</h3>
+                    <h3 class="text-xl font-bold text-barnakap-red mb-4" data-i18n="content.entryRequirements">Entry Requirements</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li>• Must be 21+ with valid ID</li>
                         <li>• No outside food or beverages</li>
@@ -365,53 +364,9 @@
         <!-- Footer will be loaded here -->
     </div>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-barnakap-gold hover:bg-yellow-500 text-black rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
     <!-- Main JavaScript -->
     <script src="../js/main.js"></script>
     <script src="../js/i18n.js"></script>
-    
-    <!-- Initialize Back to Top Button -->
-    <script>
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        // Show/hide button on scroll
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
-            }
-        });
-        
-        // Smooth scroll to top
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
     
     <!-- Load Footer -->
     <script>

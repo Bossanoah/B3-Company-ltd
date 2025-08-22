@@ -29,6 +29,50 @@ const i18n = {
             'hero.cta.reservation': 'Make Reservation',
             'hero.cta.menu': 'View Menu',
             
+            // Page Titles
+            'page.reservations.title': 'Make a Reservation',
+            'page.reservations.subtitle': 'Reserve your table for an unforgettable dining experience',
+            'page.menu.title': 'Our Menu',
+            'page.menu.subtitle': 'Discover our exquisite culinary offerings',
+            'page.about.title': 'About Us',
+            'page.about.subtitle': 'Learn more about Barnakap City',
+            'page.contact.title': 'Contact Us',
+            'page.contact.subtitle': 'Get in touch with us',
+            'page.nightclub.title': 'Night Club',
+            'page.nightclub.subtitle': 'Experience electrifying nightlife',
+            'page.cookhouse.title': 'Cook House',
+            'page.cookhouse.subtitle': 'Traditional authentic cuisine',
+            'page.events.title': 'Events & Offers',
+            'page.events.subtitle': 'Special events and exclusive offers',
+            'page.reviews.title': 'Reviews',
+            'page.reviews.subtitle': 'What our guests say about us',
+            
+            // Form Labels
+            'form.name': 'Full Name',
+            'form.email': 'Email',
+            'form.phone': 'Phone Number',
+            'form.date': 'Date',
+            'form.time': 'Time',
+            'form.guests': 'Number of Guests',
+            'form.message': 'Message',
+            'form.subject': 'Subject',
+            'form.submit': 'Submit',
+            'form.required': 'Required',
+            
+            // Buttons
+            'btn.backToTop': 'Back to Top',
+            'btn.selectLanguage': 'Select Language',
+            'btn.english': 'English',
+            'btn.french': 'Français',
+            'btn.bookTable': 'Book Table',
+            'btn.getTickets': 'Get Tickets',
+            'btn.reserveNow': 'Reserve Now',
+            'btn.bookPremium': 'Book Premium',
+            'btn.contactUs': 'Contact Us',
+            'btn.joinParty': 'Join Party',
+            'btn.loadMore': 'Load More Reviews',
+            'btn.submitReview': 'Submit Review',
+            
             // Footer
             'footer.about.title': 'About Barnakap',
             'footer.about.description': 'Your ultimate destination for fine dining, entertainment, and unforgettable experiences in the heart of the city.',
@@ -40,7 +84,65 @@ const i18n = {
             'footer.hours.title': 'Opening Hours',
             'footer.hours.weekdays': 'Mon - Fri: 10:00 AM - 2:00 AM',
             'footer.hours.weekend': 'Sat - Sun: 12:00 PM - 4:00 AM',
-            'footer.copyright': '© 2023 Barnakap City. All rights reserved.'
+            'footer.copyright': '© 2023 Barnakap City. All rights reserved.',
+            
+            // Content Sections
+            'content.whereNightComesAlive': 'Where the night comes alive',
+            'content.clubGallery': 'Club Gallery',
+            'content.experienceElectrifying': 'Experience the electrifying atmosphere',
+            'content.weeklyEvents': 'Weekly Events',
+            'content.somethingExciting': 'Something exciting every night',
+            'content.vipServices': 'VIP Services',
+            'content.elevateYourNight': 'Elevate your night with exclusive experiences',
+            'content.specialEvents': 'Special Events',
+            'content.dontMissExclusive': 'Don\'t miss these exclusive nights',
+            'content.clubGuidelines': 'Club Guidelines',
+            'content.reviewPolicies': 'Please review our policies for a safe and enjoyable experience',
+            'content.dressCode': 'Dress Code',
+            'content.entryRequirements': 'Entry Requirements',
+            'content.guestReviews': 'GUEST REVIEWS',
+            'content.shareExperience': 'Share your experience with us',
+            'content.feedbackHelps': 'Your feedback helps us serve you better',
+            'content.leaveReview': 'Leave a Review',
+            'content.whatGuestsSay': 'What Our Guests Say',
+            'content.realReviews': 'Real reviews from real customers',
+            'content.reviewGuidelines': 'Review Guidelines',
+            'content.helpMaintain': 'Help us maintain a respectful community',
+            'content.pleaseDo': '✓ Please Do',
+            'content.pleaseDont': '✗ Please Don\'t',
+            
+            // Additional content translations
+            'content.fineDining': 'Fine Dining Experience',
+            'content.indulgeCulinary': 'Indulge in our exquisite culinary creations crafted by world-class chefs. Our restaurant offers an elegant atmosphere perfect for romantic dinners, business meetings, and special celebrations.',
+            'content.premiumIngredients': 'Premium ingredients sourced locally',
+            'content.awardWinningChef': 'Award-winning chef team',
+            'content.elegantAtmosphere': 'Elegant dining atmosphere',
+            'content.electrifyingNightlife': 'Electrifying Nightlife',
+            'content.danceNightAway': 'Dance the night away in our state-of-the-art nightclub featuring top DJs, premium sound systems, and an atmosphere that pulses with energy. VIP sections available for the ultimate experience.',
+            'content.liveDJ': 'Live DJ performances every night',
+            'content.premiumSound': 'Premium sound and lighting systems',
+            'content.vipBottleService': 'VIP bottle service available',
+            'content.traditionalCookHouse': 'Traditional Cook House',
+            'content.authenticFlavors': 'Experience authentic local flavors in our traditional cook house. We serve time-honored recipes passed down through generations, perfect for family gatherings and cultural dining experiences.',
+            'content.authenticDishes': 'Authentic local dishes',
+            'content.familyStyle': 'Family-style dining',
+            'content.weekendSpecials': 'Weekend specials',
+            'content.upcomingEvents': 'Upcoming Events',
+            'content.dontMissEvents': 'Don\'t miss out on our exciting events and special offers',
+            'content.djNight': 'DJ Night',
+            'content.everyFriday': 'Every Friday - Live DJ performances with the hottest beats',
+            'content.karaokeNight': 'Karaoke Night',
+            'content.singHeartOut': 'Sing your heart out every Saturday night',
+            'content.afroBeats': 'Afro Beats',
+            'content.authenticRhythms': 'Authentic African rhythms and dance',
+            
+            // Gallery items
+            'content.mainDanceFloor': 'Main Dance Floor',
+            'content.vipLounge': 'VIP Lounge',
+            'content.djBooth': 'DJ Booth',
+            'content.barArea': 'Bar Area',
+            'content.privateBooths': 'Private Booths',
+            'content.lightShow': 'Light Show'
         },
         fr: {
             // Navigation
@@ -62,6 +164,50 @@ const i18n = {
             'hero.cta.reservation': 'Réserver',
             'hero.cta.menu': 'Voir le Menu',
             
+            // Page Titles
+            'page.reservations.title': 'Faire une Réservation',
+            'page.reservations.subtitle': 'Réservez votre table pour une expérience culinaire inoubliable',
+            'page.menu.title': 'Notre Menu',
+            'page.menu.subtitle': 'Découvrez nos offres culinaires exquises',
+            'page.about.title': 'À Propos',
+            'page.about.subtitle': 'En savoir plus sur Barnakap City',
+            'page.contact.title': 'Contactez-nous',
+            'page.contact.subtitle': 'Entrez en contact avec nous',
+            'page.nightclub.title': 'Boîte de Nuit',
+            'page.nightclub.subtitle': 'Découvrez une vie nocturne électrisante',
+            'page.cookhouse.title': 'Restaurant',
+            'page.cookhouse.subtitle': 'Cuisine traditionnelle authentique',
+            'page.events.title': 'Événements & Offres',
+            'page.events.subtitle': 'Événements spéciaux et offres exclusives',
+            'page.reviews.title': 'Avis',
+            'page.reviews.subtitle': 'Ce que nos clients disent de nous',
+            
+            // Form Labels
+            'form.name': 'Nom Complet',
+            'form.email': 'Email',
+            'form.phone': 'Numéro de Téléphone',
+            'form.date': 'Date',
+            'form.time': 'Heure',
+            'form.guests': 'Nombre d\'Invités',
+            'form.message': 'Message',
+            'form.subject': 'Sujet',
+            'form.submit': 'Envoyer',
+            'form.required': 'Requis',
+            
+            // Buttons
+            'btn.backToTop': 'Retour en Haut',
+            'btn.selectLanguage': 'Sélectionner la Langue',
+            'btn.english': 'English',
+            'btn.french': 'Français',
+            'btn.bookTable': 'Réserver une Table',
+            'btn.getTickets': 'Obtenir des Billets',
+            'btn.reserveNow': 'Réserver Maintenant',
+            'btn.bookPremium': 'Réserver Premium',
+            'btn.contactUs': 'Nous Contacter',
+            'btn.joinParty': 'Rejoindre la Fête',
+            'btn.loadMore': 'Charger Plus d\'Avis',
+            'btn.submitReview': 'Soumettre un Avis',
+            
             // Footer
             'footer.about.title': 'À Propos de Barnakap',
             'footer.about.description': 'Votre destination ultime pour une cuisine raffinée, des divertissements et des expériences inoubliables au cœur de la ville.',
@@ -73,7 +219,65 @@ const i18n = {
             'footer.hours.title': 'Heures d\'Ouverture',
             'footer.hours.weekdays': 'Lun - Ven: 10h00 - 2h00',
             'footer.hours.weekend': 'Sam - Dim: 12h00 - 4h00',
-            'footer.copyright': '© 2023 Barnakap City. Tous droits réservés.'
+            'footer.copyright': '© 2023 Barnakap City. Tous droits réservés.',
+            
+            // Content Sections
+            'content.whereNightComesAlive': 'Où la nuit prend vie',
+            'content.clubGallery': 'Galerie du Club',
+            'content.experienceElectrifying': 'Découvrez l\'atmosphère électrisante',
+            'content.weeklyEvents': 'Événements Hebdomadaires',
+            'content.somethingExciting': 'Quelque chose d\'excitant chaque nuit',
+            'content.vipServices': 'Services VIP',
+            'content.elevateYourNight': 'Élevez votre nuit avec des expériences exclusives',
+            'content.specialEvents': 'Événements Spéciaux',
+            'content.dontMissExclusive': 'Ne manquez pas ces nuits exclusives',
+            'content.clubGuidelines': 'Directives du Club',
+            'content.reviewPolicies': 'Veuillez consulter nos politiques pour une expérience sûre et agréable',
+            'content.dressCode': 'Code Vestimentaire',
+            'content.entryRequirements': 'Exigences d\'Entrée',
+            'content.guestReviews': 'AVIS DES CLIENTS',
+            'content.shareExperience': 'Partagez votre expérience avec nous',
+            'content.feedbackHelps': 'Vos commentaires nous aident à mieux vous servir',
+            'content.leaveReview': 'Laisser un Avis',
+            'content.whatGuestsSay': 'Ce que nos clients disent',
+            'content.realReviews': 'De vrais avis de vrais clients',
+            'content.reviewGuidelines': 'Directives d\'Avis',
+            'content.helpMaintain': 'Aidez-nous à maintenir une communauté respectueuse',
+            'content.pleaseDo': '✓ Veuillez Faire',
+            'content.pleaseDont': '✗ Veuillez Ne Pas Faire',
+            
+            // Additional content translations
+            'content.fineDining': 'Expérience de Gastronomie',
+            'content.indulgeCulinary': 'Savourez nos créations culinaires exquises préparées par des chefs de classe mondiale. Notre restaurant offre une atmosphère élégante parfaite pour les dîners romantiques, les réunions d\'affaires et les célébrations spéciales.',
+            'content.premiumIngredients': 'Ingrédients premium d\'origine locale',
+            'content.awardWinningChef': 'Équipe de chefs primés',
+            'content.elegantAtmosphere': 'Atmosphère de restauration élégante',
+            'content.electrifyingNightlife': 'Vie Nocturne Électrisante',
+            'content.danceNightAway': 'Dansez toute la nuit dans notre boîte de nuit de pointe avec les meilleurs DJ, des systèmes audio premium et une atmosphère qui pulse d\'énergie. Sections VIP disponibles pour l\'expérience ultime.',
+            'content.liveDJ': 'Performances DJ en direct tous les soirs',
+            'content.premiumSound': 'Systèmes audio et d\'éclairage premium',
+            'content.vipBottleService': 'Service de bouteilles VIP disponible',
+            'content.traditionalCookHouse': 'Restaurant Traditionnel',
+            'content.authenticFlavors': 'Découvrez des saveurs locales authentiques dans notre restaurant traditionnel. Nous servons des recettes transmises de génération en génération, parfaites pour les rassemblements familiaux et les expériences culinaires culturelles.',
+            'content.authenticDishes': 'Plats locaux authentiques',
+            'content.familyStyle': 'Restauration familiale',
+            'content.weekendSpecials': 'Spéciaux du week-end',
+            'content.upcomingEvents': 'Événements à Venir',
+            'content.dontMissEvents': 'Ne manquez pas nos événements passionnants et offres spéciales',
+            'content.djNight': 'Soirée DJ',
+            'content.everyFriday': 'Tous les vendredis - Performances DJ en direct avec les meilleurs rythmes',
+            'content.karaokeNight': 'Soirée Karaoké',
+            'content.singHeartOut': 'Chantez à cœur ouvert tous les samedis soir',
+            'content.afroBeats': 'Rythmes Afro',
+            'content.authenticRhythms': 'Rythmes africains authentiques et danse',
+            
+            // Gallery items
+            'content.mainDanceFloor': 'Piste de Danse Principale',
+            'content.vipLounge': 'Salon VIP',
+            'content.djBooth': 'Cabine DJ',
+            'content.barArea': 'Zone Bar',
+            'content.privateBooths': 'Loges Privées',
+            'content.lightShow': 'Spectacle de Lumières'
         }
     },
     
@@ -125,41 +329,41 @@ const i18n = {
     setupLanguageSwitcher() {
         // Desktop language switcher
         const languageSwitcher = document.getElementById('languageSwitcher');
-        const languageMenu = document.getElementById('languageMenu');
+        const languageDropdown = document.getElementById('languageDropdown');
         
-        if (languageSwitcher && languageMenu) {
-            // Toggle language menu
+        if (languageSwitcher && languageDropdown) {
+            // Toggle language dropdown
             languageSwitcher.addEventListener('click', (e) => {
                 e.stopPropagation();
-                languageMenu.classList.toggle('hidden');
+                languageDropdown.classList.toggle('hidden');
             });
             
-            // Close menu when clicking outside
+            // Close dropdown when clicking outside
             document.addEventListener('click', () => {
-                languageMenu.classList.add('hidden');
+                languageDropdown.classList.add('hidden');
             });
             
-            // Prevent menu from closing when clicking inside it
-            languageMenu.addEventListener('click', (e) => {
+            // Prevent dropdown from closing when clicking inside it
+            languageDropdown.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
             
             // Handle language selection
-            languageMenu.querySelectorAll('button[data-lang]').forEach(button => {
-                button.addEventListener('click', (e) => {
+            languageDropdown.querySelectorAll('a[data-lang]').forEach(link => {
+                link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const lang = button.getAttribute('data-lang');
+                    const lang = link.getAttribute('data-lang');
                     this.setLanguage(lang);
-                    languageMenu.classList.add('hidden');
+                    languageDropdown.classList.add('hidden');
                 });
             });
         }
         
         // Mobile language switcher
-        document.querySelectorAll('#mobileMenu button[data-lang]').forEach(button => {
-            button.addEventListener('click', (e) => {
+        document.querySelectorAll('#mobileMenu a[data-lang]').forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const lang = button.getAttribute('data-lang');
+                const lang = link.getAttribute('data-lang');
                 this.setLanguage(lang);
             });
         });
@@ -171,8 +375,10 @@ const i18n = {
         const languageSwitcher = document.getElementById('languageSwitcher');
         if (languageSwitcher) {
             const flagClass = this.currentLang === 'fr' ? 'fi-fr' : 'fi-gb';
+            const langText = this.currentLang.toUpperCase();
             languageSwitcher.innerHTML = `
-                <span class="fi ${flagClass} mr-1"></span> ${this.currentLang.toUpperCase()}
+                <span class="fi ${flagClass} mr-1"></span>
+                <span class="text-sm">${langText}</span>
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -180,11 +386,11 @@ const i18n = {
         }
         
         // Update mobile language switcher active state
-        document.querySelectorAll('#mobileMenu [data-lang]').forEach(button => {
-            if (button.getAttribute('data-lang') === this.currentLang) {
-                button.classList.add('font-bold', 'text-gold');
+        document.querySelectorAll('#mobileMenu [data-lang]').forEach(link => {
+            if (link.getAttribute('data-lang') === this.currentLang) {
+                link.classList.add('font-bold', 'text-gold');
             } else {
-                button.classList.remove('font-bold', 'text-gold');
+                link.classList.remove('font-bold', 'text-gold');
             }
         });
     },
@@ -205,11 +411,6 @@ const i18n = {
                key;
     }
 };
-
-// Initialize i18n when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    i18n.init();
-});
 
 // Make i18n available globally
 window.i18n = i18n;
