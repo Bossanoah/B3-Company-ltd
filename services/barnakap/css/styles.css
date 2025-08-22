@@ -8,6 +8,19 @@
     --gold: #ffd700;
 }
 
+/* Mobile menu styles */
+#mobileMenu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobileMenu.hidden {
+    display: none !important;
+}
+
+#mobileMenu:not(.hidden) {
+    display: block !important;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
@@ -142,6 +155,7 @@ html {
 /* Event card styling */
 .event-card {
     background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }

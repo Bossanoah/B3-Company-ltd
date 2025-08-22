@@ -1,80 +1,5 @@
 // Barnakap City JavaScript Functionality
 
-// Initialize navigation functionality
-function initNavigation() {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        // Toggle mobile menu
-        mobileMenuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('hidden');
-            
-            // Toggle between menu and close icon
-            const menuIcon = mobileMenuBtn.querySelector('svg');
-            if (menuIcon) {
-                if (mobileMenu.classList.contains('hidden')) {
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-                } else {
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
-                }
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-                const menuIcon = mobileMenuBtn.querySelector('svg');
-                if (menuIcon) {
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-                }
-            }
-        });
-        
-        // Prevent menu from closing when clicking inside it
-        mobileMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-
-    // Specials dropdown toggle
-    const specialsDropdown = document.getElementById('specialsDropdown');
-    const specialsMenu = document.getElementById('specialsMenu');
-    
-    if (specialsDropdown && specialsMenu) {
-        specialsDropdown.addEventListener('click', function(e) {
-            e.preventDefault();
-            specialsMenu.classList.toggle('hidden');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!specialsDropdown.contains(e.target) && !specialsMenu.contains(e.target)) {
-                specialsMenu.classList.add('hidden');
-            }
-        });
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
 // Initialize footer functionality
 function initFooter() {
     // Add any footer-specific JavaScript here
@@ -156,20 +81,48 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize back to top button
     initBackToTopButton();
+    
+    // Initialize language switcher if i18n is available
+    if (typeof i18n !== 'undefined') {
+        i18n.init();
+    } else {
+        // If i18n is not available yet, wait for it
+        const checkI18n = setInterval(() => {
+            if (typeof i18n !== 'undefined') {
+                i18n.init();
+                clearInterval(checkI18n);
+            }
+        }, 100);
+        
+        // Stop checking after 5 seconds to prevent infinite loop
+        setTimeout(() => {
+            clearInterval(checkI18n);
+        }, 5000);
+    }
 });
 
 // Back to top button functionality
 function initBackToTopButton() {
+    // Check if button already exists
+    if (document.getElementById('backToTopBtn')) {
+        return;
+    }
+    
     // Create back to top button
     const backToTopBtn = document.createElement('button');
     backToTopBtn.id = 'backToTopBtn';
-    backToTopBtn.className = 'fixed bottom-8 right-8 bg-b3-red hover:bg-b3-dark-red text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible';
+    backToTopBtn.className = 'fixed bottom-8 right-8 bg-b3-red hover:bg-b3-dark-red text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-50';
     backToTopBtn.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     `;
-    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    
+    // Set aria-label with translation support
+    const ariaLabel = typeof i18n !== 'undefined' ? i18n.t('btn.backToTop') : 'Back to top';
+    backToTopBtn.setAttribute('aria-label', ariaLabel);
+    backToTopBtn.setAttribute('title', ariaLabel);
+    
     document.body.appendChild(backToTopBtn);
     
     // Show/hide button based on scroll position
