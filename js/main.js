@@ -6,25 +6,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobileMenu');
     
     if (mobileMenuBtn && mobileMenu) {
+        // Store the original hamburger icon HTML
         const hamburgerIcon = mobileMenuBtn.innerHTML;
         const closeIcon = '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+        let isMenuOpen = false;
 
-        function setMenuState(isOpen) {
-            if (isOpen) {
+        // Function to toggle menu state
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
                 mobileMenu.classList.remove('hidden');
                 mobileMenuBtn.innerHTML = closeIcon;
                 mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
             } else {
                 mobileMenu.classList.add('hidden');
                 mobileMenuBtn.innerHTML = hamburgerIcon;
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = ''; // Re-enable scrolling
             }
         }
 
+        // Toggle menu on button click
         mobileMenuBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            const isHidden = mobileMenu.classList.contains('hidden');
-            setMenuState(isHidden);
+            toggleMenu();
+        });
+
+        // Close menu when clicking on a menu item
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
         });
 
         // Prevent clicks inside the menu from closing it
@@ -34,10 +47,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Click outside closes the mobile menu
         document.addEventListener('click', function() {
-            if (!mobileMenu.classList.contains('hidden')) {
-                setMenuState(false);
+            if (isMenuOpen) {
+                toggleMenu();
             }
         });
+
+        // Close menu when window is resized to desktop view
+        function handleResize() {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        }
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
     }
 
     // Smooth scrolling for anchor links
