@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook House - Barnakap City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937',
+                        'gold': '#ffd700',
+                        'barnakap-red': '#DC2626',
+                        'barnakap-gold': '#F59E0B',
+                        'barnakap-dark': '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-2xl font-bold text-gold">Barnakap City</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.home">Home</a>
+                    <a href="menu.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.menu">Menu</a>
+                    <a href="reservations.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.reservations">Reservations</a>
+                    <a href="about.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.about">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative group ml-4">
+                        <button class="flex items-center text-white hover:text-barnakap-gold transition duration-300 border border-barnakap-gold rounded-md px-3 py-1">
+                            <span class="fi fi-gb mr-1"></span>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-barnakap-gold">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                                <span class="fi fi-gb mr-2"></span>
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                                <span class="fi fi-fr mr-2"></span>
+                                <span>Français</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Specials Dropdown -->
+                    <div class="relative group">
+                        <button class="text-barnakap-gold hover:text-gold transition duration-300 flex items-center font-semibold">
+                            <span data-i18n="nav.specials">Specials</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-b3-gray rounded-md shadow-lg hidden group-hover:block">
+                            <a href="nightclub.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.nightclub">Night Club</a>
+                            <a href="cookhouse.html" class="block px-4 py-2 text-barnakap-gold hover:bg-b3-red font-semibold" data-i18n="nav.cookhouse">Cook House</a>
+                            <a href="events.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.events">Events & Offers</a>
+                            <a href="reviews.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.reviews">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-b3-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.home">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.menu">Menu</a>
+                <a href="reservations.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reservations">Reservations</a>
+                <a href="about.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.contact">Contact</a>
+                <a href="nightclub.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.nightclub">Night Club</a>
+                <a href="cookhouse.html" class="block px-3 py-2 text-barnakap-gold hover:text-gold font-semibold" data-i18n="nav.cookhouse">Cook House</a>
+                <a href="events.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.events">Events & Offers</a>
+                <a href="reviews.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reviews">Reviews</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="border-t border-barnakap-gold mt-2 pt-2">
+                    <p class="px-3 py-2 text-barnakap-gold font-medium">Select Language</p>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                        <span class="fi fi-gb mr-2"></span>
+                        <span>English</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                        <span class="fi fi-fr mr-2"></span>
+                        <span>Français</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Add padding to account for fixed navbar -->
+    <div class="h-16"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-orange-800 via-black to-yellow-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-barnakap-red">COOK</span> 
+                <span class="text-barnakap-gold">HOUSE</span>
+            </h1>
+            <p class="text-2xl text-gray-300 mb-8">Authentic Traditional Flavors</p>
+            <p class="text-lg text-gray-400">Where heritage meets hospitality</p>
+        </div>
+    </section>
+
+    <!-- About Cook House -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-gold">Traditional Heritage</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our Cook House celebrates the rich culinary traditions passed down through generations. 
+                        Led by Mama Sarah, a master chef with over 30 years of experience, we serve authentic 
+                        dishes prepared using time-honored methods and locally-sourced ingredients.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Every meal is a journey through culture and history, where families gather, stories are 
+                        shared, and the true spirit of community dining comes alive. Experience the warmth of 
+                        traditional hospitality in our cozy, family-friendly atmosphere.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-barnakap-red">30+</div>
+                            <div class="text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-barnakap-gold">50+</div>
+                            <div class="text-gray-400">Traditional Recipes</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-600 to-red-600 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-white text-lg font-bold">Traditional Cook House</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Dishes -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Traditional Dishes</h2>
+                <p class="text-lg text-gray-300">Authentic flavors from our cultural heritage</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Jollof Rice -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-barnakap-gold">
+                    <div class="bg-orange-600 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold">Jollof Rice</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-2">Jollof Rice Platter</h3>
+                    <p class="text-gray-300 mb-3">Traditional West African rice dish with chicken, plantains, and vegetables. A family favorite served with love.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$28</span>
+                        <span class="text-sm text-barnakap-red bg-red-900 px-2 py-1 rounded">Family Style</span>
+                    </div>
+                </div>
+
+                <!-- Pepper Soup -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-barnakap-red">
+                    <div class="bg-red-600 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold">Pepper Soup</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-red mb-2">Spicy Pepper Soup</h3>
+                    <p class="text-gray-300 mb-3">Traditional spicy broth with goat meat, fish, and aromatic local spices. Perfect for warming the soul.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$22</span>
+                        <span class="text-sm text-orange-400 bg-orange-900 px-2 py-1 rounded">🌶️ Spicy</span>
+                    </div>
+                </div>
+
+                <!-- Grilled Tilapia -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-green-500">
+                    <div class="bg-green-600 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold">Grilled Tilapia</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-400 mb-2">Whole Grilled Tilapia</h3>
+                    <p class="text-gray-300 mb-3">Fresh tilapia grilled with local herbs and spices, served with yam and traditional sauce.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$32</span>
+                        <span class="text-sm text-green-400 bg-green-900 px-2 py-1 rounded">Weekend Special</span>
+                    </div>
+                </div>
+
+                <!-- Fufu & Egusi -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-yellow-500">
+                    <div class="bg-yellow-600 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-black font-bold">Fufu & Egusi</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Fufu & Egusi Soup</h3>
+                    <p class="text-gray-300 mb-3">Traditional cassava fufu served with rich egusi soup made with melon seeds and vegetables.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$26</span>
+                        <span class="text-sm text-yellow-400 bg-yellow-900 px-2 py-1 rounded">Traditional</span>
+                    </div>
+                </div>
+
+                <!-- Plantain & Beans -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-purple-500">
+                    <div class="bg-purple-600 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold">Plantain & Beans</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">Plantain & Beans</h3>
+                    <p class="text-gray-300 mb-3">Sweet plantains cooked with black-eyed peas in palm oil sauce. A comforting traditional meal.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$20</span>
+                        <span class="text-sm text-purple-400 bg-purple-900 px-2 py-1 rounded">Vegetarian</span>
+                    </div>
+                </div>
+
+                <!-- Suya -->
+                <div class="menu-item card-hover rounded-lg p-6 bg-gradient-to-br from-gray-800 to-gray-900 border border-orange-500">
+                    <div class="bg-orange-500 h-48 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold">Suya</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-orange-400 mb-2">Beef Suya</h3>
+                    <p class="text-gray-300 mb-3">Spiced grilled beef skewers with traditional suya spice blend. A popular street food favorite.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="price-tag text-2xl">$18</span>
+                        <span class="text-sm text-orange-400 bg-orange-900 px-2 py-1 rounded">Grilled</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekend Family Specials -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">Weekend Family Specials</h2>
+                <p class="text-lg text-gray-300">Extended family feast menus for sharing</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-black rounded-lg p-8 border-2 border-barnakap-gold">
+                    <h3 class="text-2xl font-bold text-barnakap-gold mb-4">Saturday Family Feast</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Large Jollof Rice Platter</span>
+                            <span class="text-barnakap-red">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Grilled Chicken & Fish</span>
+                            <span class="text-barnakap-red">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Fried Plantains</span>
+                            <span class="text-barnakap-red">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Mixed Vegetables</span>
+                            <span class="text-barnakap-red">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Traditional Drinks</span>
+                            <span class="text-barnakap-red">✓</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-3xl font-bold text-barnakap-gold">$120</span>
+                            <span class="text-gray-400 block text-sm">Serves 6-8 people</span>
+                        </div>
+                        <a href="reservations.html" class="bg-barnakap-gold text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-300">
+                            Reserve Table
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-black rounded-lg p-8 border-2 border-barnakap-red">
+                    <h3 class="text-2xl font-bold text-barnakap-red mb-4">Sunday Community Meal</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Pepper Soup (Large Pot)</span>
+                            <span class="text-barnakap-gold">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Fufu & Egusi Soup</span>
+                            <span class="text-barnakap-gold">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Grilled Tilapia</span>
+                            <span class="text-barnakap-gold">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Yam & Sauce</span>
+                            <span class="text-barnakap-gold">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Palm Wine</span>
+                            <span class="text-barnakap-gold">✓</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-3xl font-bold text-barnakap-red">$150</span>
+                            <span class="text-gray-400 block text-sm">Serves 8-10 people</span>
+                        </div>
+                        <a href="reservations.html" class="bg-barnakap-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition duration-300">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Experience -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Cultural Experience</h2>
+                <p class="text-lg text-gray-300">More than just dining - it's a cultural journey</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-barnakap-gold to-yellow-600 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-black text-3xl">🎵</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-3">Traditional Music</h3>
+                    <p class="text-gray-300">Live traditional music performances during weekend dinners, featuring local instruments and folk songs.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-barnakap-red to-red-800 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-3xl">📚</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-red mb-3">Storytelling</h3>
+                    <p class="text-gray-300">Elder storytellers share traditional tales and folklore while you dine, preserving our oral traditions.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-green-600 to-emerald-600 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-3xl">👥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-400 mb-3">Community Dining</h3>
+                    <p class="text-gray-300">Communal seating arrangements that encourage conversation and connection with other families.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Mama Sarah -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-orange-600 to-red-600 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-white text-lg font-bold">Mama Sarah</span>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-gold">Meet Mama Sarah</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Mama Sarah Okafor is the heart and soul of our Cook House. With over 30 years of culinary 
+                        experience, she has dedicated her life to preserving and sharing the authentic flavors of 
+                        our cultural heritage.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Born and raised in a family of traditional cooks, Mama Sarah learned these recipes from 
+                        her grandmother and has been perfecting them ever since. Her warm smile and motherly 
+                        care make every guest feel like family.
+                    </p>
+                    <blockquote class="border-l-4 border-barnakap-gold pl-4 italic text-gray-300 mb-6">
+                        "Food is love made visible. When I cook, I put my heart into every dish, just like my 
+                        grandmother taught me. Every meal should bring people together."
+                    </blockquote>
+                    <div class="text-right">
+                        <span class="text-barnakap-gold font-semibold">- Mama Sarah Okafor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Hours & Info -->
+    <section class="py-16 bg-black">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4 text-white">Cook House Information</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-4">Operating Hours</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <div class="flex justify-between">
+                            <span>Monday - Friday:</span>
+                            <span>12:00 PM - 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Saturday:</span>
+                            <span>11:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sunday:</span>
+                            <span>11:00 AM - 9:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-barnakap-red mb-4">Special Features</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Family-style communal dining</li>
+                        <li>• Traditional music on weekends</li>
+                        <li>• Storytelling sessions</li>
+                        <li>• Group reservations welcome</li>
+                        <li>• Cultural events monthly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-barnakap-gold hover:bg-yellow-500 text-black rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/i18n.js"></script>
+    
+    <!-- Initialize Back to Top Button -->
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    
+    <!-- Load Footer -->
+    <script>
+        // Load footer
+        fetch('../shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footer = document.getElementById('footer');
+                if (footer) footer.innerHTML = data;
+                if (typeof initFooter === 'function') {
+                    initFooter();
+                }
+            });
+    </script>
+
+</body>
+</html>

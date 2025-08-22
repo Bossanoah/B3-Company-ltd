@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Barnakap City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937',
+                        'gold': '#ffd700',
+                        'barnakap-red': '#DC2626',
+                        'barnakap-gold': '#F59E0B',
+                        'barnakap-dark': '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-2xl font-bold text-gold">Barnakap City</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.home">Home</a>
+                    <a href="menu.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.menu">Menu</a>
+                    <a href="reservations.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.reservations">Reservations</a>
+                    <a href="about.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.about">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative group ml-4">
+                        <button class="flex items-center text-white hover:text-barnakap-gold transition duration-300 border border-barnakap-gold rounded-md px-3 py-1">
+                            <span class="fi fi-gb mr-1"></span>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-barnakap-gold">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                                <span class="fi fi-gb mr-2"></span>
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                                <span class="fi fi-fr mr-2"></span>
+                                <span>Français</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Specials Dropdown -->
+                    <div class="relative group">
+                        <button class="text-barnakap-gold hover:text-gold transition duration-300 flex items-center font-semibold">
+                            <span data-i18n="nav.specials">Specials</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-b3-gray rounded-md shadow-lg hidden group-hover:block">
+                            <a href="nightclub.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.nightclub">Night Club</a>
+                            <a href="cookhouse.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.cookhouse">Cook House</a>
+                            <a href="events.html" class="block px-4 py-2 text-barnakap-gold hover:bg-b3-red font-semibold" data-i18n="nav.events">Events & Offers</a>
+                            <a href="reviews.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.reviews">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-b3-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.home">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.menu">Menu</a>
+                <a href="reservations.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reservations">Reservations</a>
+                <a href="about.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.contact">Contact</a>
+                <a href="nightclub.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.nightclub">Night Club</a>
+                <a href="cookhouse.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.cookhouse">Cook House</a>
+                <a href="events.html" class="block px-3 py-2 text-barnakap-gold hover:text-gold font-semibold" data-i18n="nav.events">Events & Offers</a>
+                <a href="reviews.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reviews">Reviews</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="border-t border-barnakap-gold mt-2 pt-2">
+                    <p class="px-3 py-2 text-barnakap-gold font-medium">Select Language</p>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="en">
+                        <span class="fi fi-gb mr-2"></span>
+                        <span>English</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-barnakap-red flex items-center" data-lang="fr">
+                        <span class="fi fi-fr mr-2"></span>
+                        <span>Français</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Add padding to account for fixed navbar -->
+    <div class="h-16"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-purple-800 via-black to-pink-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-barnakap-red">EVENTS</span> 
+                <span class="text-barnakap-gold">&</span>
+                <span class="text-white">OFFERS</span>
+            </h1>
+            <p class="text-2xl text-gray-300 mb-8">Don't miss out on our exclusive experiences</p>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">Upcoming Events</h2>
+                <p class="text-lg text-gray-300">Mark your calendar for these exclusive experiences</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- New Year's Eve -->
+                <div class="event-card rounded-lg p-6 border-2 border-barnakap-gold">
+                    <div class="bg-gradient-to-br from-barnakap-gold to-yellow-600 h-48 rounded-lg mb-4 flex flex-col items-center justify-center text-black">
+                        <div class="text-4xl mb-2">🎉</div>
+                        <div class="countdown-timer text-xl font-bold" data-countdown="2024-12-31T21:00:00">
+                            Loading...
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-2">New Year's Eve Bash</h3>
+                    <p class="text-gray-300 mb-3">Ring in 2025 with style! Live DJ, champagne toast, and midnight fireworks.</p>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-gray-400">December 31st, 9 PM</span>
+                        <span class="text-lg font-bold text-barnakap-gold">$150</span>
+                    </div>
+                    <a href="reservations.html" class="w-full bg-barnakap-gold text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300 block text-center">
+                        Get Tickets
+                    </a>
+                </div>
+
+                <!-- Valentine's Night -->
+                <div class="event-card rounded-lg p-6 border-2 border-pink-500">
+                    <div class="bg-gradient-to-br from-pink-600 to-red-600 h-48 rounded-lg mb-4 flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-2">💕</div>
+                        <div class="countdown-timer text-xl font-bold" data-countdown="2025-02-14T20:00:00">
+                            Loading...
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-pink-400 mb-2">Valentine's Romance Night</h3>
+                    <p class="text-gray-300 mb-3">Romantic dinner packages, couples' cocktails, and live jazz music.</p>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-gray-400">February 14th, 8 PM</span>
+                        <span class="text-lg font-bold text-pink-400">$200</span>
+                    </div>
+                    <a href="reservations.html" class="w-full bg-pink-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-pink-700 transition duration-300 block text-center">
+                        Book Table
+                    </a>
+                </div>
+
+                <!-- St. Patrick's Day -->
+                <div class="event-card rounded-lg p-6 border-2 border-green-500">
+                    <div class="bg-gradient-to-br from-green-600 to-emerald-600 h-48 rounded-lg mb-4 flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-2">🍀</div>
+                        <div class="countdown-timer text-xl font-bold" data-countdown="2025-03-17T19:00:00">
+                            Loading...
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-400 mb-2">St. Patrick's Day Party</h3>
+                    <p class="text-gray-300 mb-3">Irish music, green cocktails, and traditional Irish fare all night long.</p>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-gray-400">March 17th, 7 PM</span>
+                        <span class="text-lg font-bold text-green-400">$75</span>
+                    </div>
+                    <a href="reservations.html" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition duration-300 block text-center">
+                        Join Party
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Promotions -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Current Promotions</h2>
+                <p class="text-lg text-gray-300">Limited time offers you don't want to miss</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Happy Hour -->
+                <div class="bg-gradient-to-br from-barnakap-gold to-yellow-600 rounded-lg p-6 text-black">
+                    <div class="text-center mb-4">
+                        <div class="text-4xl mb-2">🍸</div>
+                        <h3 class="text-2xl font-bold">Happy Hour</h3>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 50% off all cocktails</li>
+                        <li>• Buy 2 get 1 free appetizers</li>
+                        <li>• Discounted wine by the glass</li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="font-bold">Monday - Friday, 5-7 PM</span>
+                    </div>
+                </div>
+
+                <!-- Weekend Brunch -->
+                <div class="bg-gradient-to-br from-orange-600 to-red-600 rounded-lg p-6 text-white">
+                    <div class="text-center mb-4">
+                        <div class="text-4xl mb-2">🥞</div>
+                        <h3 class="text-2xl font-bold">Weekend Brunch</h3>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li>• Unlimited mimosas for $25</li>
+                        <li>• Special brunch menu</li>
+                        <li>• Live jazz music</li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="font-bold">Saturday & Sunday, 11 AM - 3 PM</span>
+                    </div>
+                </div>
+
+                <!-- Date Night Special -->
+                <div class="bg-gradient-to-br from-pink-600 to-purple-600 rounded-lg p-6 text-white">
+                    <div class="text-center mb-4">
+                        <div class="text-4xl mb-2">💑</div>
+                        <h3 class="text-2xl font-bold">Date Night Special</h3>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 3-course dinner for two: $99</li>
+                        <li>• Complimentary champagne</li>
+                        <li>• Reserved romantic seating</li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="font-bold">Every Tuesday</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-barnakap-gold hover:bg-yellow-500 text-black rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/i18n.js"></script>
+    
+    <!-- Initialize Back to Top Button -->
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    
+    <!-- Load Footer -->
+    <script>
+        // Load footer
+        fetch('../shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footer = document.getElementById('footer');
+                if (footer) footer.innerHTML = data;
+                if (typeof initFooter === 'function') {
+                    initFooter();
+                }
+            });
+    </script>
+
+</body>
+</html>
