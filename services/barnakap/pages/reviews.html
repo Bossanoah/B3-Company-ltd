@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Barnakap City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937',
+                        'gold': '#ffd700',
+                        'barnakap-red': '#DC2626',
+                        'barnakap-gold': '#F59E0B',
+                        'barnakap-dark': '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-2xl font-bold text-gold">Barnakap City</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.home">Home</a>
+                    <a href="menu.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.menu">Menu</a>
+                    <a href="reservations.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.reservations">Reservations</a>
+                    <a href="about.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.about">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative group">
+                        <button class="flex items-center text-white hover:text-gold">
+                            <span class="fi fi-gb mr-1"></span>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block z-50">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
+                                <span class="fi fi-gb mr-2"></span>
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="es">
+                                <span class="fi fi-es mr-2"></span>
+                                <span>Español</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
+                                <span class="fi fi-fr mr-2"></span>
+                                <span>Français</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Specials Dropdown -->
+                    <div class="relative group">
+                        <button class="text-barnakap-gold hover:text-gold transition duration-300 flex items-center font-semibold">
+                            <span data-i18n="nav.specials">Specials</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-b3-gray rounded-md shadow-lg hidden group-hover:block">
+                            <a href="nightclub.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.nightclub">Night Club</a>
+                            <a href="cookhouse.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.cookhouse">Cook House</a>
+                            <a href="events.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.events">Events & Offers</a>
+                            <a href="reviews.html" class="block px-4 py-2 text-barnakap-gold hover:bg-b3-red font-semibold" data-i18n="nav.reviews">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-b3-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.home">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.menu">Menu</a>
+                <a href="reservations.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reservations">Reservations</a>
+                <a href="about.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.contact">Contact</a>
+                <a href="nightclub.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.nightclub">Night Club</a>
+                <a href="cookhouse.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.cookhouse">Cook House</a>
+                <a href="events.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.events">Events & Offers</a>
+                <a href="reviews.html" class="block px-3 py-2 text-barnakap-gold hover:text-gold font-semibold" data-i18n="nav.reviews">Reviews</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="border-t border-gray-700 mt-2 pt-2">
+                    <p class="px-3 py-2 text-barnakap-gold font-medium">Select Language</p>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
+                        <span class="fi fi-gb mr-2"></span>
+                        <span>English</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="es">
+                        <span class="fi fi-es mr-2"></span>
+                        <span>Español</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
+                        <span class="fi fi-fr mr-2"></span>
+                        <span>Français</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Add padding to account for fixed navbar -->
+    <div class="h-16"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-blue-800 via-black to-green-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="text-barnakap-red">GUEST</span> 
+                <span class="text-barnakap-gold">REVIEWS</span>
+            </h1>
+            <p class="text-2xl text-gray-300 mb-8">Share your experience with us</p>
+            <p class="text-lg text-gray-400">Your feedback helps us serve you better</p>
+        </div>
+    </section>
+
+    <!-- Review Form Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-black rounded-lg p-8 border border-gray-700 mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-barnakap-gold text-center">Leave a Review</h2>
+                <form id="reviewForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="reviewerName" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
+                            <input type="text" id="reviewerName" name="reviewerName" required 
+                                   class="form-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="visitDate" class="block text-sm font-medium text-gray-300 mb-2">Visit Date</label>
+                            <input type="date" id="visitDate" name="visitDate" 
+                                   class="form-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Overall Rating *</label>
+                        <div class="star-rating flex space-x-1">
+                            <span class="star text-3xl cursor-pointer" data-rating="1">★</span>
+                            <span class="star text-3xl cursor-pointer" data-rating="2">★</span>
+                            <span class="star text-3xl cursor-pointer" data-rating="3">★</span>
+                            <span class="star text-3xl cursor-pointer" data-rating="4">★</span>
+                            <span class="star text-3xl cursor-pointer" data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+
+                    <div>
+                        <label for="venue" class="block text-sm font-medium text-gray-300 mb-2">Which venue did you visit?</label>
+                        <select id="venue" name="venue" class="form-input w-full px-4 py-3 rounded-lg">
+                            <option value="">Select Venue</option>
+                            <option value="restaurant">Fine Dining Restaurant</option>
+                            <option value="nightclub">Night Club</option>
+                            <option value="cookhouse">Cook House</option>
+                            <option value="multiple">Multiple Venues</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="reviewComment" class="block text-sm font-medium text-gray-300 mb-2">Your Review *</label>
+                        <textarea id="reviewComment" name="reviewComment" rows="6" required 
+                                  class="form-input w-full px-4 py-3 rounded-lg" 
+                                  placeholder="Tell us about your experience at Barnakap City..."></textarea>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Food Quality</label>
+                            <div class="flex space-x-1">
+                                <span class="mini-star cursor-pointer" data-category="food" data-rating="1">★</span>
+                                <span class="mini-star cursor-pointer" data-category="food" data-rating="2">★</span>
+                                <span class="mini-star cursor-pointer" data-category="food" data-rating="3">★</span>
+                                <span class="mini-star cursor-pointer" data-category="food" data-rating="4">★</span>
+                                <span class="mini-star cursor-pointer" data-category="food" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="foodRating" name="foodRating">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Service</label>
+                            <div class="flex space-x-1">
+                                <span class="mini-star cursor-pointer" data-category="service" data-rating="1">★</span>
+                                <span class="mini-star cursor-pointer" data-category="service" data-rating="2">★</span>
+                                <span class="mini-star cursor-pointer" data-category="service" data-rating="3">★</span>
+                                <span class="mini-star cursor-pointer" data-category="service" data-rating="4">★</span>
+                                <span class="mini-star cursor-pointer" data-category="service" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="serviceRating" name="serviceRating">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Atmosphere</label>
+                            <div class="flex space-x-1">
+                                <span class="mini-star cursor-pointer" data-category="atmosphere" data-rating="1">★</span>
+                                <span class="mini-star cursor-pointer" data-category="atmosphere" data-rating="2">★</span>
+                                <span class="mini-star cursor-pointer" data-category="atmosphere" data-rating="3">★</span>
+                                <span class="mini-star cursor-pointer" data-category="atmosphere" data-rating="4">★</span>
+                                <span class="mini-star cursor-pointer" data-category="atmosphere" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="atmosphereRating" name="atmosphereRating">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="recommend" name="recommend" 
+                               class="w-4 h-4 text-barnakap-red bg-gray-700 border-gray-600 rounded focus:ring-barnakap-red">
+                        <label for="recommend" class="ml-2 text-sm text-gray-300">
+                            I would recommend Barnakap City to others
+                        </label>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-barnakap-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 btn-animate">
+                        Submit Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Display Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">What Our Guests Say</h2>
+                <p class="text-lg text-gray-300">Real reviews from real customers</p>
+            </div>
+
+            <!-- Review Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gray-900 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-barnakap-gold mb-2" id="averageRating">4.8</div>
+                    <div class="flex justify-center mb-2">
+                        <span class="star active">★</span>
+                        <span class="star active">★</span>
+                        <span class="star active">★</span>
+                        <span class="star active">★</span>
+                        <span class="star active">★</span>
+                    </div>
+                    <div class="text-gray-400 text-sm">Average Rating</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-barnakap-red mb-2" id="totalReviews">0</div>
+                    <div class="text-gray-400">Total Reviews</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-green-400 mb-2" id="recommendPercentage">95%</div>
+                    <div class="text-gray-400">Would Recommend</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-2">4.9</div>
+                    <div class="text-gray-400">Service Rating</div>
+                </div>
+            </div>
+
+            <!-- Filter Options -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="filter-btn bg-barnakap-red text-white px-4 py-2 rounded-lg" data-filter="all">All Reviews</button>
+                <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded-lg" data-filter="restaurant">Restaurant</button>
+                <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded-lg" data-filter="nightclub">Night Club</button>
+                <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded-lg" data-filter="cookhouse">Cook House</button>
+                <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded-lg" data-filter="5-star">5 Stars</button>
+                <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded-lg" data-filter="recent">Most Recent</button>
+            </div>
+
+            <!-- Reviews Container -->
+            <div id="reviewsContainer" class="space-y-6">
+                <!-- Sample reviews will be loaded here -->
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="text-lg font-semibold text-barnakap-gold">Sarah Johnson</h4>
+                            <span class="text-sm text-gray-400">Restaurant • 2 days ago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Absolutely incredible dining experience! The wagyu ribeye was cooked to perfection, 
+                        and the service was impeccable. The ambiance is perfect for a romantic dinner. 
+                        Will definitely be returning soon!
+                    </p>
+                    <div class="flex space-x-4 text-sm text-gray-400">
+                        <span>Food: ★★★★★</span>
+                        <span>Service: ★★★★★</span>
+                        <span>Atmosphere: ★★★★★</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="text-lg font-semibold text-barnakap-gold">Michael Chen</h4>
+                            <span class="text-sm text-gray-400">Night Club • 1 week ago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Great night out with friends! The DJ was fantastic, and the VIP service was top-notch. 
+                        The cocktails were creative and delicious. Only minor complaint is it gets quite crowded 
+                        on weekends, but that's expected for such a popular spot.
+                    </p>
+                    <div class="flex space-x-4 text-sm text-gray-400">
+                        <span>Music: ★★★★★</span>
+                        <span>Service: ★★★★☆</span>
+                        <span>Atmosphere: ★★★★☆</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="text-lg font-semibold text-barnakap-gold">Amara Okafor</h4>
+                            <span class="text-sm text-gray-400">Cook House • 3 days ago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Mama Sarah's cooking brings back so many childhood memories! The jollof rice was 
+                        authentic and perfectly seasoned. The family-style dining really creates a warm, 
+                        communal atmosphere. This place is a treasure for anyone wanting genuine traditional cuisine.
+                    </p>
+                    <div class="flex space-x-4 text-sm text-gray-400">
+                        <span>Food: ★★★★★</span>
+                        <span>Service: ★★★★★</span>
+                        <span>Atmosphere: ★★★★★</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-8">
+                <button class="bg-barnakap-gold hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-semibold transition duration-300">
+                    Load More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Guidelines -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4 text-white">Review Guidelines</h2>
+                <p class="text-gray-300">Help us maintain a respectful community</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-black rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">✓ Please Do</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Share your honest experience</li>
+                        <li>• Be specific about what you liked or disliked</li>
+                        <li>• Mention the staff by name if they provided great service</li>
+                        <li>• Include details about food, service, and atmosphere</li>
+                        <li>• Be respectful and constructive</li>
+                    </ul>
+                </div>
+                <div class="bg-black rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-red-400 mb-4">✗ Please Don't</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Use offensive or inappropriate language</li>
+                        <li>• Share personal information</li>
+                        <li>• Post fake or misleading reviews</li>
+                        <li>• Include promotional content</li>
+                        <li>• Violate others' privacy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-barnakap-red hover:bg-barnakap-gold text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/i18n.js"></script>
+    
+    <!-- Initialize Back to Top Button -->
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+        
+        // Load footer
+        fetch('../shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footer = document.getElementById('footer');
+                if (footer) footer.innerHTML = data;
+                if (typeof initFooter === 'function') {
+                    initFooter();
+                }
+            });
+    </script>
+
+</body>
+</html>

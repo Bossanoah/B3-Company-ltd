@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Barnakap City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'b3-black': '#0a0a0a',
+                        'b3-red': '#dc2626',
+                        'b3-dark-red': '#991b1b',
+                        'b3-gray': '#1f2937',
+                        'gold': '#ffd700',
+                        'barnakap-red': '#DC2626',
+                        'barnakap-gold': '#F59E0B',
+                        'barnakap-dark': '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-b3-gray shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-2xl font-bold text-gold">Barnakap City</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.home">Home</a>
+                    <a href="menu.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.menu">Menu</a>
+                    <a href="reservations.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.reservations">Reservations</a>
+                    <a href="about.html" class="text-barnakap-gold hover:text-gold transition duration-300 font-semibold" data-i18n="nav.about">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.contact">Contact</a>
+                    
+                    <!-- Specials Dropdown -->
+                    <div class="relative group">
+                        <button class="text-white hover:text-gold transition duration-300 flex items-center">
+                            <span data-i18n="nav.specials">Specials</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-b3-gray rounded-md shadow-lg hidden group-hover:block">
+                            <a href="nightclub.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.nightclub">Night Club</a>
+                            <a href="cookhouse.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.cookhouse">Cook House</a>
+                            <a href="events.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.events">Events & Offers</a>
+                            <a href="reviews.html" class="block px-4 py-2 text-white hover:bg-b3-red" data-i18n="nav.reviews">Reviews</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative group ml-4">
+                        <button id="languageSwitcher" class="flex items-center text-white hover:text-gold transition duration-300">
+                            <span class="fi fi-gb mr-1"></span>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
+                                <span class="fi fi-gb mr-2"></span>
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="es">
+                                <span class="fi fi-es mr-2"></span>
+                                <span>Español</span>
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
+                                <span class="fi fi-fr mr-2"></span>
+                                <span>Français</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-b3-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.home">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.menu">Menu</a>
+                <a href="reservations.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reservations">Reservations</a>
+                <a href="about.html" class="block px-3 py-2 text-barnakap-gold hover:text-gold font-semibold" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.contact">Contact</a>
+                <a href="nightclub.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.nightclub">Night Club</a>
+                <a href="cookhouse.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.cookhouse">Cook House</a>
+                <a href="events.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.events">Events & Offers</a>
+                <a href="reviews.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reviews">Reviews</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="border-t border-gray-700 mt-2 pt-2">
+                    <p class="px-3 py-2 text-barnakap-gold font-medium">Select Language</p>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
+                        <span class="fi fi-gb mr-2"></span>
+                        <span>English</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="es">
+                        <span class="fi fi-es mr-2"></span>
+                        <span>Español</span>
+                    </a>
+                    <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
+                        <span class="fi fi-fr mr-2"></span>
+                        <span>Français</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Add padding to account for fixed navbar -->
+    <div class="h-16"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-black via-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="text-barnakap-red">About</span> 
+                <span class="text-barnakap-gold">Barnakap City</span>
+            </h1>
+            <p class="text-xl text-gray-300">Where culinary excellence meets vibrant nightlife</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-gold">Our Story</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Born from a vision to create the ultimate entertainment destination, Barnakap City opened its doors in 2020 
+                        with a mission to redefine the dining and nightlife experience. What started as a dream to bring together 
+                        world-class cuisine, electrifying nightlife, and authentic cultural dining has evolved into the city's 
+                        premier entertainment complex.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our name "Barnakap" reflects our commitment to excellence and innovation. We believe that every visit 
+                        should be an unforgettable journey through flavors, sounds, and experiences that celebrate both 
+                        international sophistication and local heritage.
+                    </p>
+                    <div class="flex items-center space-x-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-barnakap-red">4+</div>
+                            <div class="text-gray-400">Years of Excellence</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-barnakap-gold">50K+</div>
+                            <div class="text-gray-400">Happy Guests</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">3</div>
+                            <div class="text-gray-400">Unique Venues</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-400 text-lg">Barnakap City Story Image</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Restaurant Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-barnakap-red to-red-800 h-96 rounded-lg flex items-center justify-center neon-glow">
+                    <span class="text-white text-lg font-bold">Fine Dining Restaurant</span>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-red">The Restaurant</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our flagship restaurant represents the pinnacle of culinary artistry. Led by award-winning Chef Marcus 
+                        Thompson and his team of international culinary experts, we offer a menu that seamlessly blends 
+                        contemporary techniques with classic flavors.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Every dish is crafted using the finest locally-sourced ingredients and premium imports, ensuring 
+                        each meal is a masterpiece. Our elegant dining room, featuring modern décor and intimate lighting, 
+                        provides the perfect ambiance for romantic dinners, business meetings, and special celebrations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Signature Dishes</h4>
+                            <p class="text-sm text-gray-300">Wagyu Ribeye, Lobster Thermidor, Truffle Risotto</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Wine Collection</h4>
+                            <p class="text-sm text-gray-300">500+ premium wines from around the world</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Private Dining</h4>
+                            <p class="text-sm text-gray-300">Exclusive rooms for intimate gatherings</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Chef's Table</h4>
+                            <p class="text-sm text-gray-300">Interactive dining experience with the chef</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Night Club Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-gold">The Night Club</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        When the sun sets, Barnakap City transforms into the city's hottest nightclub destination. 
+                        Our state-of-the-art sound system, dynamic lighting, and world-class DJs create an atmosphere 
+                        that pulses with energy and excitement.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        From intimate VIP booths to the expansive dance floor, every corner of our club is designed 
+                        to provide an unforgettable nightlife experience. We host regular events featuring international 
+                        DJs, live performances, and themed parties that keep the energy high all night long.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-black p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-red mb-2">Sound System</h4>
+                            <p class="text-sm text-gray-300">Premium Funktion-One sound technology</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-red mb-2">VIP Service</h4>
+                            <p class="text-sm text-gray-300">Exclusive bottle service and private areas</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-red mb-2">Events</h4>
+                            <p class="text-sm text-gray-300">Weekly themed nights and special performances</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-red mb-2">Capacity</h4>
+                            <p class="text-sm text-gray-300">500+ guests with multiple dance areas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-barnakap-gold to-yellow-600 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-black text-lg font-bold">Electrifying Night Club</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Cook House Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-gray-700 to-gray-900 h-96 rounded-lg flex items-center justify-center border-2 border-barnakap-red">
+                    <span class="text-white text-lg font-bold">Traditional Cook House</span>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-barnakap-red">The Cook House</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our Cook House celebrates the rich culinary traditions of local cuisine. Here, time-honored recipes 
+                        passed down through generations come to life in a warm, family-friendly atmosphere that honors 
+                        our cultural heritage.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Led by Mama Sarah, a renowned local chef with over 30 years of experience, our Cook House serves 
+                        authentic dishes prepared using traditional methods and locally-sourced ingredients. It's where 
+                        families gather, stories are shared, and the true spirit of community dining thrives.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Traditional Recipes</h4>
+                            <p class="text-sm text-gray-300">Authentic dishes from local heritage</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Family Style</h4>
+                            <p class="text-sm text-gray-300">Communal dining experience</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Weekend Specials</h4>
+                            <p class="text-sm text-gray-300">Extended family feast menus</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg border border-barnakap-gold">
+                            <h4 class="font-bold text-barnakap-gold mb-2">Cultural Events</h4>
+                            <p class="text-sm text-gray-300">Traditional music and storytelling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-gold">Meet Our Team</h2>
+                <p class="text-lg text-gray-300">The passionate individuals who make Barnakap City exceptional</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black rounded-lg p-6 text-center card-hover">
+                    <div class="bg-gray-800 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">Chef Marcus</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-red mb-2">Chef Marcus Thompson</h3>
+                    <p class="text-barnakap-gold mb-3">Executive Chef</p>
+                    <p class="text-gray-300 text-sm">Award-winning chef with 15+ years of international experience in Michelin-starred restaurants.</p>
+                </div>
+                <div class="bg-black rounded-lg p-6 text-center card-hover">
+                    <div class="bg-gray-800 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">Mama Sarah</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-2">Mama Sarah Okafor</h3>
+                    <p class="text-barnakap-red mb-3">Cook House Chef</p>
+                    <p class="text-gray-300 text-sm">Master of traditional cuisine with 30+ years preserving and sharing authentic local recipes.</p>
+                </div>
+                <div class="bg-black rounded-lg p-6 text-center card-hover">
+                    <div class="bg-gray-800 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">DJ Phoenix</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">DJ Phoenix</h3>
+                    <p class="text-barnakap-gold mb-3">Resident DJ</p>
+                    <p class="text-gray-300 text-sm">International DJ known for creating unforgettable nights with diverse musical experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-barnakap-red">Our Values</h2>
+                <p class="text-lg text-gray-300">The principles that guide everything we do</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-barnakap-red to-red-800 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl">🍴</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-red mb-3">Excellence</h3>
+                    <p class="text-gray-300">We strive for perfection in every dish, every service, and every experience.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-barnakap-gold to-yellow-600 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-black text-2xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-barnakap-gold mb-3">Community</h3>
+                    <p class="text-gray-300">We celebrate togetherness and create spaces where connections flourish.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-gray-600 to-gray-800 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-white">
+                        <span class="text-white text-2xl">🌟</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Innovation</h3>
+                    <p class="text-gray-300">We continuously evolve while respecting tradition and heritage.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-green-600 to-green-800 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl">🌱</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-400 mb-3">Sustainability</h3>
+                    <p class="text-gray-300">We are committed to responsible practices and supporting local communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-barnakap-gold">Experience Barnakap City</h2>
+            <p class="text-xl text-gray-300 mb-8">Join us for an unforgettable journey of flavors, music, and memories</p>
+            <div class="space-x-4">
+                <a href="reservations.html" class="bg-barnakap-red hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300 btn-animate">Make a Reservation</a>
+                <a href="contact.html" class="bg-transparent border-2 border-barnakap-gold hover:bg-barnakap-gold hover:text-black text-barnakap-gold px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-barnakap-red hover:bg-barnakap-gold text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/i18n.js"></script>
+    
+    <!-- Initialize Back to Top Button -->
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+    <!-- Load Footer -->
+    <script>
+        // Load footer
+        fetch('../shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footer = document.getElementById('footer');
+                if (footer) footer.innerHTML = data;
+                if (typeof initFooter === 'function') {
+                    initFooter();
+                }
+            });
+    </script>
+</body>
+</html>
