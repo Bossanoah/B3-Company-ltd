@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barnakap City - Dine, Dance & Delight</title>
+    <link rel="icon" href="Bar-images/image.png" class="rounded-full">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,10 +12,13 @@
                 extend: {
                     colors: {
                         'b3-black': '#0a0a0a',
-                        'b3-red': '#dc2626',
-                        'b3-dark-red': '#991b1b',
+                        'b3-yellow': '#FFD700',
+                        'b3-dark-yellow': '#D4AF37',
                         'b3-gray': '#1f2937',
-                        'gold': '#ffd700'
+                        'b3-logo': '#E5B80B',
+                        'barnakap-red': '#FFD700',
+                        'barnakap-gold': '#FFD700',
+                        'barnakap-dark': '#111827'
                     }
                 }
             }
@@ -31,19 +35,21 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <a href="index.html" class="text-2xl font-bold text-gold">Barnakap City</a>
+                        <a href="index.html" class="flex items-center">
+                            <img src="Bar-images/image.png" alt="Barnakap City Logo" class="h-12 rounded-full">
+                        </a>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.home">Home</a>
-                    <a href="pages/menu.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.menu">Menu</a>
-                    <a href="pages/reservations.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.reservations">Reservations</a>
-                    <a href="pages/about.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.about">About Us</a>
-                    <a href="pages/contact.html" class="text-white hover:text-gold transition duration-300" data-i18n="nav.contact">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-b3-yellow hover:text-b3-yellow transition duration-300" data-i18n="nav.home">Home</a>
+                    <a href="pages/menu.html" class="text-white hover:text-b3-yellow transition duration-300" data-i18n="nav.menu">Menu</a>
+                    <a href="pages/reservations.html" class="text-white hover:text-b3-yellow transition duration-300" data-i18n="nav.reservations">Reservations</a>
+                    <a href="pages/about.html" class="text-white hover:text-b3-yellow transition duration-300" data-i18n="nav.about">About Us</a>
+                    <a href="pages/contact.html" class="text-white hover:text-b3-yellow transition duration-300" data-i18n="nav.contact">Contact</a>
                     
                     <!-- Specials Dropdown -->
                     <div class="relative group">
-                        <button class="text-white hover:text-gold transition duration-300 flex items-center">
+                        <button class="text-white hover:text-b3-yellow transition duration-300 flex items-center">
                             <span data-i18n="nav.specials">Specials</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -59,19 +65,19 @@
                     
                     <!-- Language Switcher -->
                     <div class="relative group ml-4">
-                        <button id="languageSwitcher" class="flex items-center text-white hover:text-gold transition duration-300 border border-gold rounded-md px-3 py-1">
+                        <button id="languageSwitcher" class="flex items-center text-white hover:text-b3-yellow transition duration-300 border border-b3-yellow rounded-md px-3 py-1">
                             <span class="fi fi-gb mr-1"></span>
-                            <span class="text-sm">EN</span>
+                            <span class="text-b3-yellow">EN</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
-                        <div id="languageDropdown" class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-gold z-50">
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-32 bg-b3-gray rounded-md shadow-lg hidden group-hover:block border border-b3-yellow z-50">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-yellow hover:bg-opacity-20" data-lang="en">
                                 <span class="fi fi-gb mr-2"></span>
                                 <span data-i18n="btn.english">English</span>
                             </a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-red flex items-center" data-lang="fr">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-b3-yellow hover:bg-opacity-20" data-lang="fr">
                                 <span class="fi fi-fr mr-2"></span>
                                 <span data-i18n="btn.french">Français</span>
                             </a>
@@ -93,19 +99,19 @@
         <!-- Mobile menu -->
         <div id="mobileMenu" class="md:hidden hidden bg-b3-gray">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.home">Home</a>
-                <a href="pages/menu.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.menu">Menu</a>
-                <a href="pages/reservations.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reservations">Reservations</a>
-                <a href="pages/about.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.about">About Us</a>
-                <a href="pages/contact.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.contact">Contact</a>
-                <a href="pages/nightclub.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.nightclub">Night Club</a>
-                <a href="pages/cookhouse.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.cookhouse">Cook House</a>
-                <a href="pages/events.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.events">Events & Offers</a>
-                <a href="pages/reviews.html" class="block px-3 py-2 text-white hover:text-gold" data-i18n="nav.reviews">Reviews</a>
+                <a href="index.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.home">Home</a>
+                <a href="pages/menu.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.menu">Menu</a>
+                <a href="pages/reservations.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.reservations">Reservations</a>
+                <a href="pages/about.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.about">About Us</a>
+                <a href="pages/contact.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.contact">Contact</a>
+                <a href="pages/nightclub.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.nightclub">Night Club</a>
+                <a href="pages/cookhouse.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.cookhouse">Cook House</a>
+                <a href="pages/events.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.events">Events & Offers</a>
+                <a href="pages/reviews.html" class="block px-3 py-2 text-white hover:text-b3-yellow" data-i18n="nav.reviews">Reviews</a>
                 
                 <!-- Mobile Language Switcher -->
                 <div class="border-t border-gold mt-2 pt-2">
-                    <p class="px-3 py-2 text-gold font-medium" data-i18n="btn.selectLanguage">Select Language</p>
+                    <p class="px-3 py-2 text-b3-yellow font-medium" data-i18n="btn.selectLanguage">Select Language</p>
                     <a href="#" class="block px-6 py-2 text-white hover:bg-b3-red flex items-center" data-lang="en">
                         <span class="fi fi-gb mr-2"></span>
                         <span data-i18n="btn.english">English</span>
@@ -126,15 +132,15 @@
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 text-center">
             <h1 class="text-6xl md:text-8xl font-bold mb-6">
-                <span class="text-b3-red" data-i18n="hero.title">Barnakap City</span>
+                <span class="text-barnakap-gold" data-i18n="hero.title">Barnakap City</span>
             </h1>
             <p class="text-2xl text-gray-300 mb-8" data-i18n="hero.subtitle">Dine, Dance & Delight</p>
             <p class="text-lg text-gray-400 mb-12" data-i18n="hero.description">Experience the ultimate fusion of fine dining, electrifying nightlife, and authentic cuisine</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="pages/reservations.html" class="bg-b3-red hover:bg-b3-dark-red text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 btn-animate" data-i18n="hero.cta.reservation">
+                <a href="pages/reservations.html" class="bg-barnakap-gold hover:bg-b3-dark-yellow text-black px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 btn-animate" data-i18n="hero.cta.reservation">
                     Make Reservation
                 </a>
-                <a href="pages/menu.html" class="border-2 border-gold text-gold hover:bg-gold hover:text-black px-8 py-4 rounded-lg text-lg font-semibold transition duration-300" data-i18n="hero.cta.menu">
+                <a href="pages/menu.html" class="border-2 border-barnakap-gold text-barnakap-gold hover:bg-barnakap-gold hover:text-black px-8 py-4 rounded-lg text-lg font-semibold transition duration-300" data-i18n="hero.cta.menu">
                     View Menu
                 </a>
             </div>
@@ -265,6 +271,63 @@
     </section>
 
     <!-- Footer -->
+
+    <footer class="bg-b3-gray py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold text-barnakap-gold mb-4">Barnakap City</h3>
+                    <p class="text-gray-300">Your premier destination for dining, entertainment, and unforgettable experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-md font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-barnakap-gold">Home</a></li>
+                        <li><a href="pages/menu.html" class="text-gray-300 hover:text-barnakap-gold">Menu</a></li>
+                        <li><a href="pages/reservations.html" class="text-gray-300 hover:text-barnakap-gold">Reservations</a></li>
+                        <li><a href="pages/about.html" class="text-gray-300 hover:text-barnakap-gold">About Us</a></li>
+                        <li><a href="pages/contact.html" class="text-gray-300 hover:text-barnakap-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-md font-bold text-white mb-4">Contact Us</h4>
+                    <address class="not-italic text-gray-300">
+                        <p>123 Barnakap Street</p>
+                        <p>City, Country</p>
+                        <p>Phone: +1 234 567 890</p>
+                        <p>Email: info@barnakapcity.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-md font-bold text-white mb-4">Opening Hours</h4>
+                    <ul class="text-gray-300 space-y-1">
+                        <li>Monday - Thursday: 5PM - 2AM</li>
+                        <li>Friday - Saturday: 4PM - 4AM</li>
+                        <li>Sunday: 4PM - 12AM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Barnakap City. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <button id="backToTop" title="back to top" class="fixed bottom-8 right-8 bg-barnakap-red hover:bg-barnakap-gold text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+    // Initialize any footer-specific JavaScript here
+    function initFooter() {
+        // Footer initialization code if needed
+    }
+    </script>
+    
+
     <div id="footer">
         <!-- Footer will be loaded here -->
     </div>
@@ -272,6 +335,30 @@
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/i18n.js"></script>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     
     <!-- Load Footer -->
     <script>

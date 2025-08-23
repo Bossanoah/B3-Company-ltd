@@ -2,10 +2,10 @@
 
 :root {
     --b3-black: #0a0a0a;
-    --b3-red: #dc2626;
-    --b3-dark-red: #991b1b;
+    --b3-yellow: #FFD700;
+    --b3-dark-yellow: #D4AF37;
     --b3-gray: #1f2937;
-    --gold: #ffd700;
+    --b3-logo: #E5B80B;
 }
 
 /* Mobile menu styles */
@@ -45,16 +45,16 @@ html {
 
 /* Neon glow effect */
 .neon-glow {
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.3), 0 0 60px rgba(220, 38, 38, 0.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1);
     animation: neonPulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes neonPulse {
     from {
-        box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.3), 0 0 60px rgba(220, 38, 38, 0.1);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1);
     }
     to {
-        box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.5), 0 0 90px rgba(220, 38, 38, 0.3);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.5), 0 0 90px rgba(255, 215, 0, 0.3);
     }
 }
 
@@ -73,12 +73,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #DC2626;
+    background: var(--b3-yellow);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #B91C1C;
+    background: var(--b3-dark-yellow);
 }
 
 /* Hover effects for cards */
@@ -88,7 +88,7 @@ html {
 
 .card-hover:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 }
 
 /* Button animations */
