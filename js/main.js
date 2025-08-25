@@ -1,5 +1,8 @@
 // Main JavaScript for B3 Company LTD website
 
+// Add class to indicate JS is loaded - prevents FOUC
+document.documentElement.classList.add('js-loaded');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle with close (X) icon + outside click to close
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');

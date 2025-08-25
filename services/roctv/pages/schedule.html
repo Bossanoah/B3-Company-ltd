@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - RocTV | B3 Company Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'roc-black': '#0a0a0a',
+                        'roc-red': '#dc2626',
+                        'roc-dark-red': '#991b1b',
+                        'roc-blue': '#0ea5e9',
+                        'roc-electric-blue': '#06b6d4',
+                        'roc-gray': '#1f2937',
+                        'roc-dark-gray': '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-roc-black text-white">
+    <!-- Navigation (same as other pages) -->
+    <nav class="bg-roc-dark-gray shadow-lg fixed w-full z-50 border-b border-roc-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="../index.html">
+                            <img src="../images/roc-logo.png" alt="RocTV Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover">
+                            <p class="text-xs text-gray-400 mt-1">by B3 Company Ltd</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center space-x-6">
+                        <a href="../index.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="shows.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Shows</a>
+                        <a href="schedule.html" class="text-roc-electric-blue hover:text-roc-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Schedule</a>
+                        <a href="live.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Live TV</a>
+                        <a href="events.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Events</a>
+                        <a href="about.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About Us</a>
+                        <a href="contact.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <div class="relative group">
+                            <button class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                <span>More</span>
+                                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-48 bg-roc-dark-gray rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-roc-blue">
+                                <div class="py-1">
+                                    <a href="reviews.html" class="block px-4 py-2 text-sm text-white hover:bg-roc-red hover:text-white transition duration-300">Reviews</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-roc-electric-blue focus:outline-none focus:text-roc-electric-blue" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-roc-dark-gray border-t border-roc-blue">
+                <a href="../index.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
+                <a href="shows.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Shows</a>
+                <a href="schedule.html" class="text-roc-electric-blue hover:text-roc-red block px-3 py-2 rounded-md text-base font-medium transition duration-300">Schedule</a>
+                <a href="live.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Live TV</a>
+                <a href="events.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Events</a>
+                <a href="about.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">About Us</a>
+                <a href="contact.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contact</a>
+                <a href="reviews.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium transition duration-300">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-br from-roc-black via-roc-dark-gray to-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent">Weekly Schedule</span>
+            </h1>
+            <p class="text-xl text-gray-300">Never miss your favorite shows with our detailed weekly programming guide.</p>
+        </div>
+    </section>
+
+    <!-- Day Filters -->
+    <section class="py-8 bg-roc-dark-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="day-filter bg-roc-red text-white px-4 py-2 rounded-lg font-semibold active" data-day="all">All Days</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="monday">Monday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="tuesday">Tuesday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="wednesday">Wednesday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="thursday">Thursday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="friday">Friday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="saturday">Saturday</button>
+                <button class="day-filter bg-roc-gray text-gray-300 px-4 py-2 rounded-lg font-semibold hover:bg-roc-red hover:text-white transition duration-300" data-day="sunday">Sunday</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Grid -->
+    <section class="py-16 bg-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="overflow-x-auto">
+                <div class="schedule-grid min-w-full">
+                    <!-- Header Row -->
+                    <div class="schedule-cell schedule-header">Time</div>
+                    <div class="schedule-cell schedule-header">Monday</div>
+                    <div class="schedule-cell schedule-header">Tuesday</div>
+                    <div class="schedule-cell schedule-header">Wednesday</div>
+                    <div class="schedule-cell schedule-header">Thursday</div>
+                    <div class="schedule-cell schedule-header">Friday</div>
+                    <div class="schedule-cell schedule-header">Saturday</div>
+                    <div class="schedule-cell schedule-header">Sunday</div>
+
+                    <!-- 6:00 PM Row -->
+                    <div class="schedule-cell schedule-time">6:00 PM</div>
+                    <div class="schedule-cell schedule-row" data-day="monday">
+                        <div class="text-sm font-semibold text-roc-electric-blue">Celebrity Spotlight</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="tuesday">
+                        <div class="text-sm font-semibold text-green-400">Roc News</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="wednesday">
+                        <div class="text-sm font-semibold text-green-400">Roc News</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="thursday">
+                        <div class="text-sm font-semibold text-green-400">Roc News</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="friday">
+                        <div class="text-sm font-semibold text-green-400">Roc News</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="saturday">
+                        <div class="text-sm font-semibold text-green-400">Roc News</div>
+                        <div class="text-xs text-gray-400">News</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="sunday">
+                        <div class="text-sm font-semibold text-purple-400">Pop Pulse</div>
+                        <div class="text-xs text-gray-400">Music</div>
+                    </div>
+
+                    <!-- 8:00 PM Row -->
+                    <div class="schedule-cell schedule-time">8:00 PM</div>
+                    <div class="schedule-cell schedule-row" data-day="monday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="tuesday">
+                        <div class="text-sm font-semibold text-roc-electric-blue">Roc Talk</div>
+                        <div class="text-xs text-gray-400">Talk Show</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="wednesday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="thursday">
+                        <div class="text-sm font-semibold text-pink-400">Classic Cinema</div>
+                        <div class="text-xs text-gray-400">Movies</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="friday">
+                        <div class="text-sm font-semibold text-roc-red">Rock Central</div>
+                        <div class="text-xs text-gray-400">Music</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="saturday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="sunday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+
+                    <!-- 9:00 PM Row -->
+                    <div class="schedule-cell schedule-time">9:00 PM</div>
+                    <div class="schedule-cell schedule-row" data-day="monday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="tuesday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="wednesday">
+                        <div class="text-sm font-semibold text-yellow-400">Jazz Nights</div>
+                        <div class="text-xs text-gray-400">Music</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="thursday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="friday">
+                        <div class="text-sm font-semibold text-purple-400">Movie Nights</div>
+                        <div class="text-xs text-gray-400">Movies</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="saturday">
+                        <div class="text-sm font-semibold text-purple-400">Movie Nights</div>
+                        <div class="text-xs text-gray-400">Movies</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="sunday">
+                        <div class="text-sm font-semibold text-purple-400">Movie Nights</div>
+                        <div class="text-xs text-gray-400">Movies</div>
+                    </div>
+
+                    <!-- 11:00 PM Row -->
+                    <div class="schedule-cell schedule-time">11:00 PM</div>
+                    <div class="schedule-cell schedule-row" data-day="monday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="tuesday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="wednesday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="thursday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="friday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="saturday">
+                        <div class="text-sm font-semibold text-green-400">Late Night Conversations</div>
+                        <div class="text-xs text-gray-400">Talk Show</div>
+                    </div>
+                    <div class="schedule-cell schedule-row" data-day="sunday">
+                        <div class="text-sm font-semibold text-gray-400">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-roc-dark-gray border-t border-roc-blue py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent mb-4">RocTV</h3>
+                    <p class="text-gray-300 mb-4">Your ultimate entertainment destination. Part of the B3 Company Ltd family, bringing you the best in television, music, and live events.</p>
+                    <p class="text-sm text-gray-400">© 2024 RocTV by B3 Company Ltd. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="shows.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Shows</a></li>
+                        <li><a href="schedule.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Schedule</a></li>
+                        <li><a href="live.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Live TV</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Contact</a></li>
+                        <li><a href="reviews.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Reviews</a></li>
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-roc-red transition duration-300">← Back to B3 Company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

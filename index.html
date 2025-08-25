@@ -2,8 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
     <title>B3 Company LTD - Innovation through Diversity</title>
+    <!-- Critical CSS to prevent FOUC -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: #1f2937;
+            width: 100%;
+        }
+        .pt-safe {
+            padding-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+        /* Hide animations until page loads */
+        .animate-on-scroll {
+            opacity: 1;
+        }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,7 +64,6 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-b3-black text-white">
     <!-- Navigation -->
@@ -45,7 +89,7 @@
                             <div class="absolute left-0 mt-2 w-64 bg-b3-gray rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" id="servicesMenu">
                                 <div class="py-1">
                                     <a href="services/barnakap/index.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-barnakap">B3 Barnakap City</a>
-                                    <a href="pages/rock-tivi.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-rock">B3 Roc Tv</a>
+                                    <a href="services/roctv/index.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-rock"> B3 RocTV</a>
                                     <a href="pages/music-industry.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-music">B3 Sounds</a>
                                     <a href="pages/coming-soon.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-future">B3 Production</a>
                                     <a href="pages/coming-soon.html" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-b3-red hover:text-white transition duration-300" data-translate="services-future">B3 MicroFinace</a>
@@ -86,7 +130,7 @@
                 <a href="pages/about.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium" data-translate="nav-about">About Us</a>
                 <div class="text-white px-3 py-2 rounded-md text-base font-medium border-t border-b3-red mt-2 pt-2" data-translate="nav-services-label">Services:</div>
                 <a href="services/barnakap/index.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="barnakap-title">B3 Barnakap City</a>
-                <a href="pages/rock-tivi.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="rock-tivi-title">B3 Rock TV</a>
+                <a href="services/roctv/index.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="rock-tivi-title"> B3 RocTV</a>
                 <a href="pages/music-industry.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="music-title">B3 Sounds</a>
                 <a href="pages/coming-soon.html" target="_blank" class="text-gray-300 hover:text-b3-red block px-6 py-2 rounded-md text-sm font-medium" data-translate="services-future">B3 Production</a>
                 <a href="pages/contact.html" class="text-white hover:text-b3-red block px-3 py-2 rounded-md text-base font-medium border-t border-b3-red mt-2 pt-2" data-translate="nav-contact">Contact</a>
@@ -189,7 +233,7 @@
                     <h3 class="text-sm sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center" data-translate="rock-tivi-title">B3 Rock TV</h3>
                     <p class="text-xs sm:text-base text-gray-300 text-center mb-2 sm:mb-4" data-translate="rock-desc">Entertainment media platform</p>
                     <div class="text-center">
-                        <a href="pages/rock-tivi.html" target="_blank" class="bg-b3-red hover:bg-b3-dark-red text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded transition duration-300 text-xs sm:text-sm" data-translate="explore">Explore</a>
+                        <a href="services/roctv/index.html" target="_blank" class="bg-b3-red hover:bg-b3-dark-red text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded transition duration-300 text-xs sm:text-sm" data-translate="explore">Explore</a>
                     </div>
                 </div>
                 
