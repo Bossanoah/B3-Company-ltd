@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - RocTV | B3 Company Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'roc-black': '#0a0a0a',
+                        'roc-red': '#dc2626',
+                        'roc-dark-red': '#991b1b',
+                        'roc-blue': '#0ea5e9',
+                        'roc-electric-blue': '#06b6d4',
+                        'roc-gray': '#1f2937',
+                        'roc-dark-gray': '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-roc-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-roc-dark-gray shadow-lg fixed w-full z-50 border-b border-roc-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html">
+                        <img src="../images/roc-logo.png" alt="RocTV Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-1">by B3 Company Ltd</p>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                    <a href="shows.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Shows</a>
+                    <!-- <a href="schedule.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Schedule</a>
+                    <a href="live.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Live TV</a>
+                    <a href="events.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Events</a> -->
+                    <a href="about.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                    <a href="reviews.html" class="text-roc-electric-blue hover:text-roc-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Reviews</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-roc-electric-blue focus:outline-none focus:text-roc-electric-blue" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-roc-dark-gray border-t border-roc-blue">
+                <a href="../index.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="shows.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Shows</a>
+               <!--  <a href="schedule.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Schedule</a>
+                <a href="live.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Live TV</a>
+                <a href="events.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Events</a> -->
+                <a href="about.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="reviews.html" class="text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-br from-roc-black via-roc-dark-gray to-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent">Reviews</span>
+            </h1>
+            <p class="text-xl text-gray-300">Share your thoughts about RocTV shows and help us improve our programming.</p>
+        </div>
+    </section>
+
+    <!-- Review Form -->
+    <section class="py-16 bg-roc-dark-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-roc-black p-8 rounded-2xl border border-roc-blue/30">
+                <h2 class="text-2xl font-bold text-white mb-6 text-center">Leave a Review</h2>
+                <form id="reviewForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="reviewName" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
+                            <input type="text" id="reviewName" name="name" required class="form-input w-full" placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Rating *</label>
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Click to rate (1-5 stars)</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="reviewComment" class="block text-sm font-medium text-gray-300 mb-2">Your Review *</label>
+                        <textarea id="reviewComment" name="comment" required rows="4" class="form-textarea w-full" placeholder="Tell us what you think about RocTV..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-gradient-to-r from-roc-red to-roc-dark-red hover:from-roc-dark-red hover:to-roc-red text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                        Submit Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Display -->
+    <section class="py-16 bg-roc-black">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">What Our Viewers Say</h2>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-roc-dark-gray p-6 rounded-lg text-center border border-roc-red/30">
+                    <div class="text-3xl font-bold text-roc-red mb-2" id="totalReviews">0</div>
+                    <div class="text-gray-300">Total Reviews</div>
+                </div>
+                <div class="bg-roc-dark-gray p-6 rounded-lg text-center border border-roc-electric-blue/30">
+                    <div class="text-3xl font-bold text-roc-electric-blue mb-2" id="averageRating">0.0</div>
+                    <div class="text-gray-300">Average Rating</div>
+                </div>
+                <div class="bg-roc-dark-gray p-6 rounded-lg text-center border border-green-500/30">
+                    <div class="text-3xl font-bold text-green-400 mb-2" id="recommendationRate">0%</div>
+                    <div class="text-gray-300">Recommend RocTV</div>
+                </div>
+            </div>
+            
+            <!-- Reviews List -->
+            <div id="reviewsList" class="space-y-6">
+                <!-- Reviews will be dynamically loaded here -->
+            </div>
+            
+            <!-- Sample Reviews -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="review-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-white">Alex Johnson</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="star-rating">
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                </div>
+                                <span class="text-sm text-gray-400">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">Absolutely love RocTV! The music shows are fantastic and the quality is top-notch. Rock Central is my favorite show - can't wait for Friday nights!</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-white">Maria Garcia</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="star-rating">
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star" style="pointer-events: none;">★</span>
+                                </div>
+                                <span class="text-sm text-gray-400">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">Great variety of shows and excellent programming. The talk shows are really engaging. Would love to see more comedy content in the future!</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-white">David Kim</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="star-rating">
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                </div>
+                                <span class="text-sm text-gray-400">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">The live streaming quality is impressive and the schedule is well organized. Jazz Nights on Wednesday is pure gold! Keep up the excellent work!</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-white">Sarah Thompson</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="star-rating">
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star active" style="pointer-events: none;">★</span>
+                                    <span class="star" style="pointer-events: none;">★</span>
+                                </div>
+                                <span class="text-sm text-gray-400">5 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">RocTV has become my go-to entertainment channel. The movie nights are fantastic and I love the variety. The website is also very user-friendly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-roc-dark-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Join the RocTV Community</h2>
+            <p class="text-xl text-gray-300 mb-8">Your feedback helps us create better content for everyone.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="live.html" class="bg-gradient-to-r from-roc-red to-roc-dark-red hover:from-roc-dark-red hover:to-roc-red text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Watch Live Now
+                </a>
+                <a href="shows.html" class="border-2 border-roc-electric-blue text-roc-electric-blue hover:bg-roc-electric-blue hover:text-roc-black font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Browse Shows
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-roc-dark-gray border-t border-roc-blue py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent mb-4">RocTV</h3>
+                    <p class="text-gray-300 mb-4">Your ultimate entertainment destination. Part of the B3 Company Ltd family, bringing you the best in television, music, and live events.</p>
+                    <p class="text-sm text-gray-400">© 2024 RocTV by B3 Company Ltd. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="shows.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Shows</a></li>
+                        <li><a href="schedule.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Schedule</a></li>
+                        <li><a href="live.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Live TV</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Contact</a></li>
+                        <li><a href="reviews.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Reviews</a></li>
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-roc-red transition duration-300">← Back to B3 Company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RocTV - Your Window to Entertainment | B3 Company Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'roc-black': '#0a0a0a',
+                        'roc-red': '#dc2626',
+                        'roc-dark-red': '#991b1b',
+                        'roc-blue': '#0ea5e9',
+                        'roc-electric-blue': '#06b6d4',
+                        'roc-gray': '#1f2937',
+                        'roc-dark-gray': '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-roc-black text-white">
+    <!-- Navigation -->
+    <nav class="bg-roc-dark-gray shadow-lg fixed w-full z-50 border-b border-roc-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img src="../roctv/roc-images/image.png" alt="RocTV Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-1">by B3 Company Ltd</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center space-x-6">
+                        <a href="index.html" class="text-roc-electric-blue hover:text-roc-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="pages/shows.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Shows</a>
+                        <!-- <a href="pages/schedule.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Schedule</a>
+                        <a href="pages/live.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Live TV</a>
+                        <a href="pages/events.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Events</a> -->
+                        <a href="pages/about.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About Us</a>
+                        <a href="pages/contact.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <div class="relative group">
+                            <button class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center" id="reviewsDropdown">
+                                <span>More</span>
+                                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-48 bg-roc-dark-gray rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-roc-blue" id="reviewsMenu">
+                                <div class="py-1">
+                                    <a href="pages/reviews.html" class="block px-4 py-2 text-sm text-white hover:bg-roc-red hover:text-white transition duration-300">Reviews</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-roc-electric-blue focus:outline-none focus:text-roc-electric-blue" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-roc-dark-gray border-t border-roc-blue">
+                <a href="index.html" class="text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="pages/shows.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Shows</a>
+               <!--  <a href="pages/schedule.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Schedule</a>
+                <a href="pages/live.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Live TV</a>
+                <a href="pages/events.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Events</a> -->
+                <a href="pages/about.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="pages/contact.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="pages/reviews.html" class="text-gray-300 hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-roc-black via-roc-dark-gray to-roc-black pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-roc-blue/10 to-roc-red/10"></div>
+        <div class="text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative z-10">
+            <div class="mb-8">
+                <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-roc-red via-roc-electric-blue to-roc-red bg-clip-text text-transparent animate-pulse">RocTV</span>
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl text-roc-electric-blue font-semibold mb-6">
+                    Your Window to Entertainment
+                </p>
+            </div>
+            
+            <p class="text-base sm:text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience the best in entertainment with RocTV. From exclusive shows and live broadcasts to special events - we bring entertainment to every screen.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                <a href="pages/live.html" class="bg-gradient-to-r from-roc-red to-roc-dark-red hover:from-roc-dark-red hover:to-roc-red text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto text-center shadow-lg">
+                    📺 Watch Live
+                </a>
+                <a href="pages/shows.html" class="border-2 border-roc-electric-blue text-roc-electric-blue hover:bg-roc-electric-blue hover:text-roc-black font-bold py-4 px-8 rounded-lg transition duration-300 w-full sm:w-auto text-center">
+                    Browse Shows
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Ticker -->
+    <section class="bg-roc-red py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center">
+                <span class="bg-roc-black text-white px-4 py-2 rounded-lg font-bold mr-4 flex-shrink-0">LIVE</span>
+                <div class="overflow-hidden flex-1">
+                    <div class="whitespace-nowrap animate-pulse">
+                        <span class="font-semibold">🔴 NOW PLAYING: Rock Music Marathon • 🎬 COMING UP: Movie Night Special • 📺 NEW: Weekly Talk Show Premiere • 🎵 TONIGHT: Live Concert Event</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RocTV Channels Section -->
+    <section class="py-16 bg-gradient-to-br from-roc-black via-roc-dark-gray to-roc-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-roc-blue/5 to-roc-red/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <span class="bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent">RocTV Channels</span>
+                </h2>
+                <p class="text-lg text-gray-300">Discover our diverse range of entertainment channels</p>
+            </div>
+            
+            <!-- Floating Channels Grid -->
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                <!-- RocTV Movie -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 0s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-roc-blue">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-roc-electric-blue font-semibold mt-1">MOVIE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RocTV Gospel -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 1s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-yellow-500">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-yellow-400 font-semibold mt-1">GOSPEL</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RocTV Sport -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 2s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-cyan-500">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-cyan-400 font-semibold mt-1">SPORT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RocTV News -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 3s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-orange-500">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-orange-400 font-semibold mt-1">NEWS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RocTV Muzik -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 4s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-pink-500">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-pink-400 font-semibold mt-1">MUZIK</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RocTV Toon -->
+                <div class="roc-channel-logo floating-animation" style="animation-delay: 5s;">
+                    <div class="relative group cursor-pointer transform transition-all duration-300 hover:scale-110">
+                        <div class="text-center">
+                            <div class="text-xl md:text-2xl font-bold tracking-wider">
+                                <span class="text-white">ROC</span><span class="text-gray-400">TV</span>
+                            </div>
+                            <div class="text-sm md:text-base text-gray-300 font-semibold mt-1">TOON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sub-heading -->
+            <div class="text-center mt-12">
+                <p class="text-gray-400 text-sm md:text-base">
+                    All channels available 24/7 with premium entertainment content
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Shows Section -->
+    <section class="py-20 bg-roc-dark-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Featured Shows</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Discover our most popular programs and exclusive content
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-roc-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105 border border-roc-blue/30">
+                    <div class="h-48 bg-gradient-to-br from-roc-red to-roc-dark-red flex items-center justify-center">
+                        <span class="text-6xl">🎸</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Rock Central</h3>
+                        <p class="text-gray-300 text-sm mb-4">The ultimate rock music experience with live performances and interviews.</p>
+                        <span class="bg-roc-red text-white px-3 py-1 rounded-full text-xs font-semibold">Music Show</span>
+                    </div>
+                </div>
+                
+                <div class="bg-roc-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105 border border-roc-blue/30">
+                    <div class="h-48 bg-gradient-to-br from-roc-electric-blue to-roc-blue flex items-center justify-center">
+                        <span class="text-6xl">💬</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Roc Talk</h3>
+                        <p class="text-gray-300 text-sm mb-4">Engaging conversations with celebrities, artists, and industry leaders.</p>
+                        <span class="bg-roc-electric-blue text-roc-black px-3 py-1 rounded-full text-xs font-semibold">Talk Show</span>
+                    </div>
+                </div>
+                
+                <div class="bg-roc-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105 border border-roc-blue/30">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+                        <span class="text-6xl">🎬</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Movie Nights</h3>
+                        <p class="text-gray-300 text-sm mb-4">Premium movie screenings and exclusive premieres every weekend.</p>
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Movies</span>
+                    </div>
+                </div>
+                
+                <div class="bg-roc-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105 border border-roc-blue/30">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
+                        <span class="text-6xl">📰</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Roc News</h3>
+                        <p class="text-gray-300 text-sm mb-4">Stay updated with the latest entertainment news and industry updates.</p>
+                        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">News</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="pages/shows.html" class="bg-gradient-to-r from-roc-electric-blue to-roc-blue hover:from-roc-blue hover:to-roc-electric-blue text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    View All Shows
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="py-16 bg-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 bg-roc-dark-gray rounded-lg border border-roc-red/30 hover:border-roc-red transition duration-300">
+                    <div class="text-roc-red text-5xl mb-4">📅</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Weekly Schedule</h3>
+                    <p class="text-gray-300 mb-6">Check out what's coming up this week</p>
+                    <a href="pages/schedule.html" class="bg-roc-red hover:bg-roc-dark-red text-white font-bold py-2 px-6 rounded transition duration-300">
+                        View Schedule
+                    </a>
+                </div>
+                
+                <div class="text-center p-8 bg-roc-dark-gray rounded-lg border border-roc-electric-blue/30 hover:border-roc-electric-blue transition duration-300">
+                    <div class="text-roc-electric-blue text-5xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Special Events</h3>
+                    <p class="text-gray-300 mb-6">Don't miss our exclusive events</p>
+                    <a href="pages/events.html" class="bg-roc-electric-blue hover:bg-roc-blue text-roc-black font-bold py-2 px-6 rounded transition duration-300">
+                        View Events
+                    </a>
+                </div>
+                
+                <div class="text-center p-8 bg-roc-dark-gray rounded-lg border border-purple-500/30 hover:border-purple-500 transition duration-300">
+                    <div class="text-purple-400 text-5xl mb-4">⭐</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Reviews</h3>
+                    <p class="text-gray-300 mb-6">Share your thoughts about our shows</p>
+                    <a href="pages/reviews.html" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded transition duration-300">
+                        Leave Review
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-roc-dark-gray border-t border-roc-blue py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent mb-4">RocTV</h3>
+                    <p class="text-gray-300 mb-4">Your ultimate entertainment destination. Part of the B3 Company Ltd family, bringing you the best in television, music, and live events.</p>
+                    <p class="text-sm text-gray-400">© 2024 RocTV by B3 Company Ltd. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pages/shows.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Shows</a></li>
+                        <li><a href="pages/schedule.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Schedule</a></li>
+                        <li><a href="pages/live.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Live TV</a></li>
+                        <li><a href="pages/events.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pages/about.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">About Us</a></li>
+                        <li><a href="pages/contact.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Contact</a></li>
+                        <li><a href="pages/reviews.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Reviews</a></li>
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-roc-red transition duration-300">← Back to B3 Company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

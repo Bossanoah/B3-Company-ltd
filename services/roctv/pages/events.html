@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - RocTV | B3 Company Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'roc-black': '#0a0a0a',
+                        'roc-red': '#dc2626',
+                        'roc-dark-red': '#991b1b',
+                        'roc-blue': '#0ea5e9',
+                        'roc-electric-blue': '#06b6d4',
+                        'roc-gray': '#1f2937',
+                        'roc-dark-gray': '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-roc-black text-white">
+    <!-- Navigation (simplified for brevity) -->
+    <nav class="bg-roc-dark-gray shadow-lg fixed w-full z-50 border-b border-roc-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html">
+                        <img src="../images/roc-logo.png" alt="RocTV Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-1">by B3 Company Ltd</p>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                    <a href="shows.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Shows</a>
+                    <a href="schedule.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Schedule</a>
+                    <a href="live.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Live TV</a>
+                    <a href="events.html" class="text-roc-electric-blue hover:text-roc-red px-3 py-2 rounded-md text-sm font-medium transition duration-300">Events</a>
+                    <a href="about.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About Us</a>
+                    <a href="contact.html" class="text-white hover:text-roc-electric-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-roc-electric-blue focus:outline-none focus:text-roc-electric-blue" id="mobileMenuBtn" aria-label="Open menu" title="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-roc-dark-gray border-t border-roc-blue">
+                <a href="../index.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="shows.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Shows</a>
+                <a href="schedule.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Schedule</a>
+                <a href="live.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Live TV</a>
+                <a href="events.html" class="text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="about.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-white hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="reviews.html" class="text-gray-300 hover:text-roc-electric-blue block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-br from-roc-black via-roc-dark-gray to-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent">Special Events</span>
+            </h1>
+            <p class="text-xl text-gray-300">Don't miss our exclusive concerts, premieres, and special broadcasts.</p>
+        </div>
+    </section>
+
+    <!-- Next Big Event -->
+    <section class="py-16 bg-roc-dark-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">🎸 Next Big Event</h2>
+            <div class="bg-gradient-to-br from-roc-red/20 to-roc-electric-blue/20 p-8 rounded-2xl border border-roc-red/30">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">RocTV Music Festival 2024</h3>
+                <p class="text-lg text-gray-300 mb-8">Live performances from top rock bands, exclusive interviews, and special guests.</p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown mb-8" data-date="2024-12-31T20:00:00">
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span class="countdown-number">25</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number">12</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number">34</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number">56</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-roc-red hover:bg-roc-dark-red text-white font-bold py-3 px-8 rounded-lg transition duration-300">Set Reminder</button>
+                    <button class="border-2 border-roc-electric-blue text-roc-electric-blue hover:bg-roc-electric-blue hover:text-roc-black font-bold py-3 px-8 rounded-lg transition duration-300">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-16 bg-roc-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Upcoming Events</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-roc-blue/30 hover:border-roc-blue transition duration-300">
+                    <div class="text-4xl mb-4 text-center">🎤</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Live Interview Night</h3>
+                    <p class="text-gray-300 mb-4">Exclusive one-on-one interviews with top music artists.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-roc-electric-blue font-semibold">Dec 15, 2024</span>
+                        <span class="bg-roc-electric-blue text-roc-black px-3 py-1 rounded-full text-sm font-semibold">8:00 PM</span>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-roc-red/30 hover:border-roc-red transition duration-300">
+                    <div class="text-4xl mb-4 text-center">🎬</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Movie Marathon Weekend</h3>
+                    <p class="text-gray-300 mb-4">48-hour non-stop movie screening featuring cult classics.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-roc-red font-semibold">Dec 20-22, 2024</span>
+                        <span class="bg-roc-red text-white px-3 py-1 rounded-full text-sm font-semibold">All Day</span>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-purple-500/30 hover:border-purple-500 transition duration-300">
+                    <div class="text-4xl mb-4 text-center">🎉</div>
+                    <h3 class="text-xl font-bold text-white mb-2">New Year Special</h3>
+                    <p class="text-gray-300 mb-4">Ring in the new year with live performances and celebrations.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-purple-400 font-semibold">Dec 31, 2024</span>
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">11:00 PM</span>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-green-500/30 hover:border-green-500 transition duration-300">
+                    <div class="text-4xl mb-4 text-center">🎵</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Acoustic Sessions</h3>
+                    <p class="text-gray-300 mb-4">Intimate acoustic performances in our studio.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-green-400 font-semibold">Jan 5, 2025</span>
+                        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">7:30 PM</span>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-yellow-500/30 hover:border-yellow-500 transition duration-300">
+                    <div class="text-4xl mb-4 text-center">📺</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Behind the Scenes</h3>
+                    <p class="text-gray-300 mb-4">Go behind the scenes of RocTV's daily operations.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-yellow-400 font-semibold">Jan 10, 2025</span>
+                        <span class="bg-yellow-600 text-black px-3 py-1 rounded-full text-sm font-semibold">6:00 PM</span>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="bg-roc-dark-gray rounded-lg p-6 border border-pink-500/30 hover:border-pink-500 transition duration-300">
+                    <div class="text-4xl mb-4 text-center">🏆</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Annual Awards Show</h3>
+                    <p class="text-gray-300 mb-4">Celebrating the best in music and entertainment.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-pink-400 font-semibold">Jan 15, 2025</span>
+                        <span class="bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">9:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-roc-dark-gray">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Never Miss an Event</h2>
+            <p class="text-xl text-gray-300 mb-8">Subscribe to get notified about upcoming events and exclusive content.</p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="form-input flex-1">
+                <button class="bg-roc-red hover:bg-roc-dark-red text-white font-bold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-roc-dark-gray border-t border-roc-blue py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-roc-red to-roc-electric-blue bg-clip-text text-transparent mb-4">RocTV</h3>
+                    <p class="text-gray-300 mb-4">Your ultimate entertainment destination. Part of the B3 Company Ltd family, bringing you the best in television, music, and live events.</p>
+                    <p class="text-sm text-gray-400">© 2024 RocTV by B3 Company Ltd. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="shows.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Shows</a></li>
+                        <li><a href="schedule.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Schedule</a></li>
+                        <li><a href="live.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Live TV</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Contact</a></li>
+                        <li><a href="reviews.html" class="text-gray-300 hover:text-roc-electric-blue transition duration-300">Reviews</a></li>
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-roc-red transition duration-300">← Back to B3 Company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
